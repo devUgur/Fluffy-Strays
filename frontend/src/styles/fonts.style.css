@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Arimo';
+    src: url('@/assets/fonts/Arimo/Arimo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Indie';
+    src: url('@/assets/fonts/Indie/IndieFlower-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Titan';
+    src: url('@/assets/fonts/Titan/TitanOne-Regular.ttf') format('truetype');
+}
