@@ -23,7 +23,7 @@ export default {
   text-align: center;
 }
 .container{
-  padding: 100px 0;
+  padding: var(--home-vertical-padding) 0;
 }
 p{
   font-weight: bold;

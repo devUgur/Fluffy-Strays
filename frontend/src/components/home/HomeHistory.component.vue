@@ -1,7 +1,7 @@
 <template>
   <div id="home-history-component">
     <div class="container">
-      <div class="banner"></div>
+      <div class="home-banner"></div>
       <div class="video">
         <video controls width="250">
           <source src="@/assets/videos/history2.mp4" type="video/mp4" />
@@ -29,45 +29,7 @@
 export default {
   name: "HomeHistoryComponent",
   methods: {
-    togglePlayPause() {
-      const video = this.$refs.videoPlayer;
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    },
-    stopVideo() {
-      const video = this.$refs.videoPlayer;
-      video.currentTime = 0;
-      video.pause();
-    },
-    toggleMute() {
-      const video = this.$refs.videoPlayer;
-      video.muted = !video.muted;
-    },
-    increaseVolume() {
-      const video = this.$refs.videoPlayer;
-      if (video.volume < 1) {
-        video.volume += 0.1;
-      }
-    },
-    decreaseVolume() {
-      const video = this.$refs.videoPlayer;
-      if (video.volume > 0) {
-        video.volume -= 0.1;
-      }
-    },
-    toggleFullScreen() {
-      const video = this.$refs.videoPlayer;
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
-      }
-    },
+
   },
 };
 </script>
@@ -76,16 +38,12 @@ export default {
 .container{
 
 }
-.banner {
-  height: 200px;
-  background-color: orange;
-}
 
 .video {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: -100px;
+  margin-top: -125px;
 
 }
 
@@ -123,15 +81,14 @@ p.reference{
   width: 100%;
 }
 
-/* Fügen Sie die folgenden CSS-Regeln hinzu, um den Button anzupassen */
 .text button {
-  align-self: flex-start; /* Stellen Sie die Breite auf 'auto' ein, damit der Button nur die benötigte Breite hat */
+  align-self: flex-start;
   width: auto;
-  padding: 10px 20px; /* Passen Sie die Polsterung nach Bedarf an */
-  background-color: orange; /* Ändern Sie die Hintergrundfarbe nach Bedarf */
-  color: white; /* Ändern Sie die Textfarbe nach Bedarf */
-  border: none; /* Entfernen Sie die Standardgrenze des Buttons */
-  border-radius: 5px; /* Fügen Sie abgerundete Ecken hinzu */
-  cursor: pointer; /* Ändern Sie den Mauszeiger in einen Zeiger, um anzuzeigen, dass es sich um einen anklickbaren Button handelt */
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 </style>
