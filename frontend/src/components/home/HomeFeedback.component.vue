@@ -98,7 +98,7 @@ export default {
 @import url("../../../node_modules/@egjs/vue3-flicking/dist/flicking.css");
 @import url("../../../node_modules/@egjs/vue3-flicking/dist/flicking-inline.css");
 .container {
-  padding: 100px 0;
+  padding: var(--home-vertical-padding) 0;
 }
 
 .title {
@@ -113,12 +113,13 @@ export default {
 
 .slides .content{
   padding-bottom: 50px;
+
 }
 .card-panel{
   background-color: white;
   max-width: 420px;
-  padding: 30px 40px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  padding: 30px 40px;
 
 }
 
@@ -128,6 +129,7 @@ export default {
   justify-content: space-between;
   gap: 10px;
   height: 100%;
+
 }
 
 .profile{

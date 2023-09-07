@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Duman",
+    "imgName": "cat01.png",
+    "descr": ""
+  },
+  {
+    "name": "Tosun",
+    "imgName": "dog01.png",
+  },
+  {
+    "name": "Lula", "imgName": "dog02.png" },
+  {
+    "name": "Balou", "imgName": "cat02.png" },
+  {
+    "name": "Anne", "imgName": "dog03.png" },
+  {
+    "name": "Pamuk", "imgName": "cat03.png" }
+]

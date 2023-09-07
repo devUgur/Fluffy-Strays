@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .container{
-  padding: 100px 0;
+  padding: var(--home-vertical-padding) 0;
   display: flex;
   flex-direction: column;
   place-items: center;

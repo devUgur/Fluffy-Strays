@@ -52,7 +52,7 @@ export default {
   display: flex;
   flex-direction: column;
   place-items: center;
-  padding-bottom: 100px;
+  padding-bottom: var(--home-vertical-padding);
 }
 .container > .title{
   text-align: center;

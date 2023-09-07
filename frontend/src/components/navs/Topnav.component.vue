@@ -118,7 +118,7 @@ button{
 }
 
 button img{
-  height: 28px;
+  height: 22px;
 }
 
 button.donate{

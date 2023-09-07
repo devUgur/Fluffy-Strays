@@ -39,7 +39,7 @@
 
 <style scoped>
 .container {
-  padding-bottom: 100px;
+  padding-bottom: var(--home-vertical-padding);
 }
 
 .title {
