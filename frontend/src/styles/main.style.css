@@ -1,3 +1,9 @@
+:root{
+    --home-vertical-padding: 100px;
+    --home-content-gap: 30px;
+
+    --primary-color: orange;
+}
 body{
     padding: 0;
     margin: 0;
@@ -17,3 +23,9 @@ button{
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
+
+.home-banner{
+    height: 250px;
+    background: orange;
+}
+

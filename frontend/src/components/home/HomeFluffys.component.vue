@@ -5,7 +5,7 @@
         <h1>unsere Fluffys</h1>
         <p>Wähle dein Liebling</p>
       </div>
-      <div class="fluffy-list">
+      <div class="fluffy-list home-banner">
         <div class="list-item"
              v-for="fluffy in fluffys"
              :key="fluffy.imgName"
@@ -48,7 +48,7 @@ export default {
   padding-bottom: 50px;
 }
 .container {
-  padding-bottom: 100px;
+  padding-bottom: var(--home-vertical-padding);
 }
 p {
   font-weight: bold;
@@ -60,8 +60,8 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  place-items: center;
   gap: 20px;
-  background-color: orange;
   padding: 30px 0;
 }
 
