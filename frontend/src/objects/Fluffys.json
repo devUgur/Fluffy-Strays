@@ -1,19 +1,34 @@
 [
   {
+    "_id": "1",
     "name": "Duman",
     "imgName": "cat01.png",
-    "descr": ""
+    "descr": "",
+    "special_properties": ""
   },
   {
+    "_id": "2",
     "name": "Tosun",
     "imgName": "dog01.png"
   },
   {
-    "name": "Lula", "imgName": "dog02.png" },
+    "_id": "3",
+    "name": "Lula",
+    "imgName": "dog02.png"
+  },
   {
-    "name": "Balou", "imgName": "cat02.png" },
+    "_id": "4",
+    "name": "Balou",
+    "imgName": "cat02.png"
+  },
   {
-    "name": "Anne", "imgName": "dog03.png" },
+    "_id": "5",
+    "name": "Anne",
+    "imgName": "dog03.png"
+  },
   {
-    "name": "Pamuk", "imgName": "cat03.png" }
+    "_id": "6",
+    "name": "Pamuk",
+    "imgName": "cat03.png"
+  }
 ]

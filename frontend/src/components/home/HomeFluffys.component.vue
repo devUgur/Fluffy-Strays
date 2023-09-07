@@ -11,6 +11,7 @@
              :key="fluffy.imgName"
              @mouseenter="mouseIsEnter = true"
              @mouseleave="mouseIsEnter = false"
+             @click="toFluffy(fluffy._id)"
         >
           <div class="image">
             <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
@@ -24,21 +25,21 @@
 </template>
 
 <script>
+import Fluffys from "@/objects/Fluffys.json"
 export default {
   name: "OurFluffysComponent",
   data() {
     return {
       mouseIsEnter: false,
-      fluffys: [
-        { name: "Duman", imgName: "cat01.png" },
-        { name: "Tosun", imgName: "dog01.png" },
-        { name: "Lula", imgName: "dog02.png" },
-        { name: "Balou", imgName: "cat02.png" },
-        { name: "Anne", imgName: "dog03.png" },
-        { name: "Pamuk", imgName: "cat03.png" },
-      ],
+      fluffys: Fluffys
     };
   },
+  methods: {
+    toFluffy(id){
+      console.log(id)
+      this.$router.push('/fluffy/'+id);
+    }
+  }
 };
 </script>
 
