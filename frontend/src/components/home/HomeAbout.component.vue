@@ -2,7 +2,7 @@
   <div id="about-text-component">
     <div class="container">
       <h1> Fluffy Strays</h1>
-      <p class="slogan">Hilf uns zu helfen</p>
+      <p class="slogan">Hilf uns zu helfen <img src="@/assets/flaticons/drwan-heart.png"></p>
       <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis fugiat neque nisi officia
         quibusdam rerum sint totam, unde veritatis. Ab aspernatur beatae dolores esse minima porro, quam temporibus
         veritatis.
@@ -30,6 +30,10 @@ p{
   font-size: 13px;
 }
 p.slogan{
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  margin: 0 auto;
   font-size: 20px;
   font-family: Indie, sans-serif;
 }
@@ -37,5 +41,9 @@ p.slogan{
 .about-text{
   max-width: 600px;
   margin: 40px auto;
+}
+
+img{
+  height: 18px;
 }
 </style>

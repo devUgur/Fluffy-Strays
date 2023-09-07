@@ -7,8 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/vue3-flicking": "^4.11.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vueperslides": "^3.5.1",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

@@ -76,10 +76,12 @@ export default {
 }
 
 .list-item{
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
   background-color: #e1e1e1;
   transition: box-shadow 0.5s;
+  border: 3px solid rgb(220,220,220);
+  max-width: calc(300px - 16px);
 }
 .list-item:hover{
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
@@ -101,13 +103,10 @@ export default {
 }
 
 .content{
-  width: 254px;
+  width: 260px;
   padding: 20px;
   background-color: white;
-  border: 3px solid rgb(220,220,220);
-  border-top: none;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+
 }
 
 p.title{
