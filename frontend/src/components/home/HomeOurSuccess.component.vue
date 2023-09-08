@@ -37,6 +37,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "HomeOurSuccessComponent"
+}
+</script>
+
 <style scoped>
 .container {
   padding-bottom: var(--home-vertical-padding);

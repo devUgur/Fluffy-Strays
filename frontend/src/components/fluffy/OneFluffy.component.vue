@@ -30,9 +30,23 @@
           </div>
         </div>
       </div>
-      <div class="">
+      <div class="galerie">
         <FluffyGalerieComponent :fluffy="fluffy"></FluffyGalerieComponent>
       </div>
+    </div>
+    <div class="about">
+      <div class="home-banner banner"></div>
+      <div class="video">
+        <video controls width="250">
+          <source src="@/assets/videos/history2.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="donation">
+        <FoodDonationBtnComponent></FoodDonationBtnComponent>
+        <BecomeGodfatherBtnComponent></BecomeGodfatherBtnComponent>
+      </div>
+      <HomeFluffysComponent></HomeFluffysComponent>
+      <HomeOurSuccessComponent></HomeOurSuccessComponent>
     </div>
   </div>
 </template>
@@ -42,12 +56,17 @@ import Fluffys from "@/objects/Fluffys.json";
 import FoodDonationBtnComponent from "@/components/buttons/FoodDonationBtn.component.vue";
 import BecomeGodfatherBtnComponent from "@/components/buttons/BecomeGodfatherBtn.component.vue";
 import FluffyGalerieComponent from "@/components/fluffy/FluffyGalerie.component.vue";
+import HomeFluffysComponent from "@/components/home/HomeFluffys.component.vue";
+import HomeOurSuccessComponent from "@/components/home/HomeOurSuccess.component.vue";
 export default {
   name: "OneFluffyComponent",
   components: {
     FoodDonationBtnComponent,
     BecomeGodfatherBtnComponent,
     FluffyGalerieComponent,
+    HomeFluffysComponent,
+    HomeOurSuccessComponent
+
   },
   computed: {
     fluffy(){
@@ -80,7 +99,7 @@ export default {
   max-width: 600px;
 }
 
-.content .left .donation{
+.donation{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -102,6 +121,29 @@ export default {
   object-fit: cover;
   border-radius: 50%;
   border: 10px solid white;
+}
+.banner{
 
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -125px;
+
+}
+
+video{
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.about .donation{
+  padding: var(--home-vertical-padding) 0;
+  justify-content: center;
 }
 </style>
