@@ -30,7 +30,9 @@
           </div>
         </div>
       </div>
-      {{ fluffy }}
+      <div class="">
+        <FluffyGalerieComponent :fluffy="fluffy"></FluffyGalerieComponent>
+      </div>
     </div>
   </div>
 </template>
@@ -39,11 +41,13 @@
 import Fluffys from "@/objects/Fluffys.json";
 import FoodDonationBtnComponent from "@/components/buttons/FoodDonationBtn.component.vue";
 import BecomeGodfatherBtnComponent from "@/components/buttons/BecomeGodfatherBtn.component.vue";
+import FluffyGalerieComponent from "@/components/fluffy/FluffyGalerie.component.vue";
 export default {
   name: "OneFluffyComponent",
   components: {
     FoodDonationBtnComponent,
     BecomeGodfatherBtnComponent,
+    FluffyGalerieComponent,
   },
   computed: {
     fluffy(){
@@ -62,7 +66,7 @@ export default {
 }
 .content{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap-reverse;
   gap: 30px;
 }
 
@@ -78,11 +82,26 @@ export default {
 
 .content .left .donation{
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
+.content .right{
+  display: flex;
+  justify-content: center;
+  flex: 1 1 300px;
+}
+
 .content .right .image{
+  max-width: 300px;
+}
+
+.content .right .image img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 50%;
-  overflow: hidden;
+  border: 10px solid white;
+
 }
 </style>
