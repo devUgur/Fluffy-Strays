@@ -15,13 +15,16 @@ const routes = [
     component:  MainLayout,
     children: [
       { name: "Home", path: "/", component: HomeView },
-      { name: "Fluffy", path: "/fluffy/:id", component:  OneFluffyComponent},
+      { name: "Fluffy", path: "/fluffy/:id", component:  OneFluffyComponent },
     ]
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 } // always scroll to top
+  },
   routes
 })
 

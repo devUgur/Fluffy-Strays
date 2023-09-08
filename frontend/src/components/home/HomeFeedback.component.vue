@@ -120,7 +120,11 @@ export default {
   max-width: 420px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   padding: 30px 40px;
+  transition: box-shadow 0.5s;
+}
 
+.card-panel:hover{
+  box-shadow: none;
 }
 
 .slide{

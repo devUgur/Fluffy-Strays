@@ -8,18 +8,20 @@
             <h1 class="name">{{fluffy.name}}</h1>
           </div>
           <div class="story">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, cupiditate, id ipsum laudantium
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, cupiditate, id ipsum laudantium
               mollitia necessitatibus nostrum nulla possimus quas quasi qui quibusdam quos ratione repellat repellendus
               reprehenderit sequi, voluptate voluptatum. Aliquam cupiditate, distinctio enim eveniet laborum neque quos
               soluta velit. Delectus dolorum eaque facilis molestias quibusdam! Ad atque blanditiis commodi culpa dolorum
               earum hic iure, molestias obcaecati, omnis quia quo quos repellat sint ullam unde vel! Alias aspernatur
               assumenda at consectetur consequuntur culpa dignissimos distinctio, earum eos fugiat fugit illo illum iure
               laudantium libero odio optio, pariatur porro quis, quod quos recusandae repellat vel? Aut ea eligendi
-              inventore numquam quasi!</p>
+              inventore numquam quasi!
+            </p>
           </div>
           <div class="donation">
-            <button class="food-donation">eine Futterspende</button>
-            <button class="food-donation">dauerhaft helfen, werde Pate</button>
+            <FoodDonationBtnComponent></FoodDonationBtnComponent>
+            <BecomeGodfatherBtnComponent></BecomeGodfatherBtnComponent>
           </div>
         </div>
         <div class="right">
@@ -35,9 +37,14 @@
 
 <script>
 import Fluffys from "@/objects/Fluffys.json";
-
+import FoodDonationBtnComponent from "@/components/buttons/FoodDonationBtn.component.vue";
+import BecomeGodfatherBtnComponent from "@/components/buttons/BecomeGodfatherBtn.component.vue";
 export default {
   name: "OneFluffyComponent",
+  components: {
+    FoodDonationBtnComponent,
+    BecomeGodfatherBtnComponent,
+  },
   computed: {
     fluffy(){
       return Fluffys.find(fluffy => fluffy._id === this.$route.params.id);
@@ -55,6 +62,27 @@ export default {
 }
 .content{
   display: flex;
+  justify-content: space-between;
   gap: 30px;
+}
+
+.content .left{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content .left .story{
+  max-width: 600px;
+}
+
+.content .left .donation{
+  display: flex;
+  gap: 20px;
+}
+
+.content .right .image{
+  border-radius: 50%;
+  overflow: hidden;
 }
 </style>
