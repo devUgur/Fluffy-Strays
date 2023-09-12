@@ -1,20 +1,7 @@
 <template>
   <div id="home-team-component">
     <div class="container">
-      <div class="content case-study">
-        <div class="image">
-          <img src="@/assets/flaticons/img.png" alt="">
-        </div>
-        <div class="text">
-          <p class="reference">Fallstudie 1</p>
-          <h1 class="title">From zero to hero</h1>
-          <p class="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eligendi est pariatur repellendus sed?
-            Deleniti, doloremque doloribus ducimus ex, excepturi laboriosam laudantium minus officia, officiis
-            praesentium repellat similique totam voluptates.
-          </p>
-          <button> Zu den Fallstudien </button>
-        </div>
-      </div>
+
       <div class="content team">
         <div class="text">
           <h2 class="title">Das Team stellt sich vor</h2>
@@ -50,10 +37,7 @@ export default {
   width: 100%;
 }
 
-.case-study{
-  gap: 60px;
-  justify-content: space-between;
-}
+
 
 .case-study .image{
   height: 300px;
@@ -75,9 +59,7 @@ export default {
   width: 100%;
 }
 
-p.reference{
-  font-weight: bold;
-}
+
 
 .image{
   display: flex;

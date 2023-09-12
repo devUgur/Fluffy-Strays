@@ -34,7 +34,7 @@ export default {
 }
 
 .list-item{
-  flex: 0 0 calc(33.33% - 30px);
+  flex: 0 0 calc(33.33% - 20px);
   display: flex;
   justify-content: center;
   place-items: center;

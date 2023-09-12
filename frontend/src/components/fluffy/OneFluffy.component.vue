@@ -3,6 +3,11 @@
     <div class="container">
       <div class="content" v-if="fluffy">
         <div class="left">
+          <div class="image">
+            <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
+          </div>
+        </div>
+        <div class="right">
           <div class="title">
             <div class="properties">{{fluffy.special_properties}}</div>
             <h1 class="name">{{fluffy.name}}</h1>
@@ -22,11 +27,6 @@
           <div class="donation">
             <FoodDonationBtnComponent></FoodDonationBtnComponent>
             <BecomeGodfatherBtnComponent></BecomeGodfatherBtnComponent>
-          </div>
-        </div>
-        <div class="right">
-          <div class="image">
-            <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
           </div>
         </div>
       </div>
@@ -85,17 +85,18 @@ export default {
 }
 .content{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap-reverse;
   gap: 30px;
 }
 
-.content .left{
+.content .right{
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.content .left .story{
+.content .right .story{
   max-width: 600px;
 }
 
@@ -105,18 +106,14 @@ export default {
   gap: 20px;
 }
 
-.content .right{
-  display: flex;
-  justify-content: center;
-  flex: 1 1 300px;
-}
 
-.content .right .image{
+
+.content .left .image{
   max-width: 300px;
 }
 
-.content .right .image img{
-  width: 100%;
+.content .left .image img{
+  width: calc(100% - 20px);
   height: auto;
   object-fit: cover;
   border-radius: 50%;
