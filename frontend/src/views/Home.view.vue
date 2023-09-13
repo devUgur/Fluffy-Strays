@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import HomeIntroComponent from "@/components/home/HomeIntro.component.vue";
+import HomeIntroComponent from "@/components/home/HomeIntro2.component.vue";
 import HomeAboutComponent from "@/components/home/HomeAbout.component.vue";
 import HomeFluffysComponent from "@/components/home/HomePickFluffySlide.component.vue";
 import HomeBlogComponent from "@/components/home/HomeBlog.component.vue";

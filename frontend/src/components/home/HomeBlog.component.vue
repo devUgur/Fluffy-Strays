@@ -35,11 +35,9 @@ export default {
       blogs: [
         { title: '', filename:'blog01.png', descr: '', to: '' },
         { title: '', filename:'blog02.png', descr: '', to: '' },
-        { title: '', filename:'blog03.png', descr: '', to: '' },
         { title: '', filename:'blog04.png', descr: '', to: '' },
         { title: '', filename:'blog05.png', descr: '', to: '' },
         { title: '', filename:'blog06.png', descr: '', to: '' },
-        { title: '', filename:'blog07.png', descr: '', to: '' },
         { title: '', filename:'blog08.png', descr: '', to: '' },
       ]
     }
@@ -70,7 +68,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   max-width: 1260px;
 
 }
