@@ -11,6 +11,7 @@
       </div>
       <div class="options-content">
         <TopnavSocialMediaComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavSocialMediaComponent>
+        <LanguageSelectorComponent v-if="!isSticky"></LanguageSelectorComponent>
       </div>
 
       <div class="donations" :class="{'collapsed': isCollapsed}">
@@ -26,9 +27,12 @@ import TopnavLogo2Component from "@/components/navs/topnav/TopnavLogo2.component
 import TopnavLinksComponent from "@/components/navs/topnav/TopnavLinks.component.vue";
 import TopnavDonationComponent from "@/components/navs/topnav/TopnavDonation.component.vue";
 import TopnavSocialMediaComponent from "@/components/navs/topnav/TopnavSocialMedia.component.vue";
+import LanguageSelectorComponent from "@/components/selectors/LanguageSelector.component.vue";
+
 export default {
   name: "TopnavComponent",
   components: {
+    LanguageSelectorComponent,
     TopnavLogoComponent,
     TopnavLogo2Component,
     TopnavLinksComponent,
@@ -104,7 +108,9 @@ export default {
 }
 
 .options-content{
-
+  display: flex;
+  place-items: center;
+  gap: 20px;
 }
 
 .donations{
@@ -119,4 +125,6 @@ export default {
   right: 0;
   bottom: -50px;
 }
+
+
 </style>

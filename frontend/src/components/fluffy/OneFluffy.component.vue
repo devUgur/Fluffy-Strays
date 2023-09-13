@@ -45,7 +45,7 @@
         <FoodDonationBtnComponent></FoodDonationBtnComponent>
         <BecomeGodfatherBtnComponent></BecomeGodfatherBtnComponent>
       </div>
-      <HomeFluffysComponent></HomeFluffysComponent>
+      <FluffyPickSlideComponent></FluffyPickSlideComponent>
       <HomeOurSuccessComponent></HomeOurSuccessComponent>
     </div>
   </div>
@@ -56,7 +56,7 @@ import Fluffys from "@/objects/Fluffys.json";
 import FoodDonationBtnComponent from "@/components/buttons/FoodDonationBtn.component.vue";
 import BecomeGodfatherBtnComponent from "@/components/buttons/BecomeGodfatherBtn.component.vue";
 import FluffyGalerieComponent from "@/components/fluffy/FluffyGalerie.component.vue";
-import HomeFluffysComponent from "@/components/home/HomeFluffys.component.vue";
+import FluffyPickSlideComponent from "@/components/fluffy/FluffyPickSlide.component.vue";
 import HomeOurSuccessComponent from "@/components/home/HomeOurSuccess.component.vue";
 export default {
   name: "OneFluffyComponent",
@@ -64,7 +64,7 @@ export default {
     FoodDonationBtnComponent,
     BecomeGodfatherBtnComponent,
     FluffyGalerieComponent,
-    HomeFluffysComponent,
+    FluffyPickSlideComponent,
     HomeOurSuccessComponent
 
   },

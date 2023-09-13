@@ -61,6 +61,7 @@ export default {
       flickingOptions: {
         align: "center",
         circular: true, // Aktiviere den endlosen Schleifenmodus
+        autoResize: true,
       },
       slides: [
         {

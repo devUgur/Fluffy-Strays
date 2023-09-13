@@ -30,5 +30,20 @@
     "_id": "6",
     "name": "Pamuk",
     "imgName": "cat03.png"
+  },
+  {
+    "_id": "7",
+    "name": "Lula",
+    "imgName": "dog02.png"
+  },
+  {
+    "_id": "8",
+    "name": "Balou",
+    "imgName": "cat02.png"
+  },
+  {
+    "_id": "9",
+    "name": "Anne",
+    "imgName": "dog03.png"
   }
 ]

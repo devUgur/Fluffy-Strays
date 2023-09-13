@@ -16,7 +16,7 @@
 <script>
 import HomeIntroComponent from "@/components/home/HomeIntro.component.vue";
 import HomeAboutComponent from "@/components/home/HomeAbout.component.vue";
-import HomeFluffysComponent from "@/components/home/HomeFluffys.component.vue";
+import HomeFluffysComponent from "@/components/home/HomePickFluffySlide.component.vue";
 import HomeBlogComponent from "@/components/home/HomeBlog.component.vue";
 import HomeBannerComponent from "@/components/home/HomeBanner.component.vue";
 import HomeFeedbackComponent from "@/components/home/HomeFeedback.component.vue";

@@ -28,5 +28,9 @@ button{
 .home-banner{
     min-height: 250px;
     background: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
 }
 
