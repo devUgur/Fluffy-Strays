@@ -88,7 +88,7 @@ export default {
 }
 
 #slide{
-  max-width: 1200px;
+  /*max-width: 1200px;*/
 
 }
 
@@ -96,6 +96,7 @@ export default {
   height: 30px;
   width: 30px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .arrow img{

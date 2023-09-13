@@ -45,5 +45,15 @@
     "_id": "9",
     "name": "Anne",
     "imgName": "dog03.png"
+  },
+  {
+    "_id": "10",
+    "name": "Pamuk",
+    "imgName": "cat03.png"
+  },
+  {
+    "_id": "11",
+    "name": "Lula",
+    "imgName": "dog02.png"
   }
 ]
