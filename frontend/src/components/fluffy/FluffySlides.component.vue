@@ -46,12 +46,13 @@ export default {
       fluffys: Fluffys,
       mouseIsEnter: false,
       flickingOptions: {
-        circularFallback: "bound",
+        circularFallback: "move",
         circular: true,
         //autoResize: true,
         align: "prev",
         autoInit: true,
         interruptable: false,
+        duration: 500,
       },
       plugins: [
         new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: true }),
