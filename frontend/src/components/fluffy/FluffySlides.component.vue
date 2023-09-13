@@ -54,7 +54,7 @@ export default {
         interruptable: false,
       },
       plugins: [
-        new AutoPlay({ duration: 5000, direction: "NEXT", stopOnHover: false }),
+        new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: true }),
       ],
       listener: null,
     };
