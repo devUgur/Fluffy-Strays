@@ -1,21 +1,28 @@
 <template>
-  <div class="layout"></div>
+  <div class="dummy"></div>
   <div class="topnav" :class="{'sticky': isSticky, 'collapsed': isCollapsed}">
-    <div class="logo-content">
-      <TopnavLogoComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogoComponent>
-    </div>
-    <div class="links-content">
-      <TopnavLinksComponent sticky="isSticky" :collapsed="isCollapsed"></TopnavLinksComponent>
-    </div>
-    <div class="options-content">
-      <div></div>
-      <TopnavDonationComponent></TopnavDonationComponent>
+    <div class="layout">
+      <div class="logo-content">
+        <!-- <TopnavLogoComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogoComponent> -->
+        <TopnavLogo2Component :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogo2Component>
+      </div>
+      <div class="links-content">
+        <TopnavLinksComponent sticky="isSticky" :collapsed="isCollapsed"></TopnavLinksComponent>
+      </div>
+      <div class="options-content">
+        <TopnavSocialMediaComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavSocialMediaComponent>
+      </div>
+
+      <div class="donations" :class="{'collapsed': isCollapsed}">
+        <TopnavDonationComponent></TopnavDonationComponent>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import TopnavLogoComponent from "@/components/navs/topnav/TopnavLogo.component.vue";
+import TopnavLogo2Component from "@/components/navs/topnav/TopnavLogo2.component.vue";
 import TopnavLinksComponent from "@/components/navs/topnav/TopnavLinks.component.vue";
 import TopnavDonationComponent from "@/components/navs/topnav/TopnavDonation.component.vue";
 import TopnavSocialMediaComponent from "@/components/navs/topnav/TopnavSocialMedia.component.vue";
@@ -23,8 +30,10 @@ export default {
   name: "TopnavComponent",
   components: {
     TopnavLogoComponent,
+    TopnavLogo2Component,
     TopnavLinksComponent,
-    TopnavDonationComponent
+    TopnavDonationComponent,
+    TopnavSocialMediaComponent
   },
   data() {
     return {
@@ -67,13 +76,17 @@ export default {
 
   padding-left: 40px;
   padding-right: 40px;
+}
 
+.layout {
+  position: relative;
   display: flex;
   justify-content: space-between;
   place-items: center;
+  height: 100%;
 }
 
-.layout{
+.dummy{
   position: relative;
   height: 100px;
   width: 100%;
@@ -88,5 +101,22 @@ export default {
 }
 .logo-content{
 
+}
+
+.options-content{
+
+}
+
+.donations{
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  transition: all 0.5s;
+}
+
+.donations.collapsed{
+  position: absolute;
+  right: 0;
+  bottom: -50px;
 }
 </style>
