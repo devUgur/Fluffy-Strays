@@ -1,8 +1,15 @@
 <template>
   <div id="fluffy-slides-component">
-    <div class="fluffy-list">
-      <div class="arrow prev" @click="prev"></div>
-      <Flicking id="slide" ref="flicking" :options="flickingOptions" :plugins="plugins">
+    <div class="fluffy-list" ref="fluffy-list">
+      <div class="arrow prev" @click="prev">
+        <img src="@/assets/flaticons/right-arrow-thin-white.png">
+      </div>
+      <Flicking
+          id="slide"
+          ref="flicking"
+          :options="flickingOptions"
+          :plugins="plugins"
+      >
         <FluffySlideItemComponent
             class="card-panel"
             v-for="fluffy in fluffys" :fluffy="fluffy"
@@ -12,7 +19,9 @@
             @mouseleave="mouseIsEnter = false"
         ></FluffySlideItemComponent>
       </Flicking>
-      <div class="arrow next" @click="next"></div>
+      <div class="arrow next" @click="next">
+        <img src="@/assets/flaticons/right-arrow-thin-white.png">
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +56,7 @@ export default {
       plugins: [
         new AutoPlay({ duration: 5000, direction: "NEXT", stopOnHover: false }),
       ],
+      listener: null,
     };
   },
   methods: {
@@ -56,6 +66,12 @@ export default {
     next(){
       this.$refs.flicking.next();
     },
+    slidingHandler(e){
+      this.mouseIsEnter = false;
+    }
+  },
+  mounted() {
+    this.listener = this.$refs["fluffy-list"].addEventListener('mousedown', this.slidingHandler);
   }
 };
 </script>
@@ -67,7 +83,7 @@ export default {
   display: flex;
   place-items: center;
   justify-content: center;
-  background-color: #1f1f1f;
+  background-color: grey;
   padding: 50px 0;
 }
 
@@ -79,6 +95,14 @@ export default {
 .arrow{
   height: 30px;
   width: 30px;
-  background-color: #f5511f;
+  cursor: pointer;
+}
+
+.arrow img{
+  height: 100%;
+}
+
+.arrow.prev img{
+  transform: rotate(180deg);
 }
 </style>
