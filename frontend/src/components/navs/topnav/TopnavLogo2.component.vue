@@ -4,7 +4,7 @@
       <img v-show="!sticky" src="@/assets/canva/logo01.png" alt="">
       <div class="logo-text" :class="{'collapsed-items': collapsed}">
         <h1 v-if="!collapsed">Fluffy Strays</h1>
-        <div v-show="!sticky"  class="slogan">Hilf uns zu Helfen</div>
+        <p v-show="!sticky"  class="slogan">Hilf uns zu Helfen</p>
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@ export default {
   z-index: 10;
   display: flex;
   place-items: center;
+  gap: 10px;
   height: calc(100vh - 20px);
   max-height: 100px;
 }
@@ -45,7 +46,7 @@ h1{
 }
 
 .logo img{
-  height: 64px;
+  height: 82px;
 }
 
 .collapsed-items{

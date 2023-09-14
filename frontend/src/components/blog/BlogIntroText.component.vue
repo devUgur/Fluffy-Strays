@@ -38,16 +38,22 @@ export default {
   place-items: center;
   justify-content: end;
   height: calc(80vh - 50px);
-  color: white;
+  color: rgba(29, 29, 30, 0.79);
 }
 
 .title{
   margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 }
 .title .name{
   font-size: 72px;
   font-weight: bold;
   text-align: center;
+  background-color: whitesmoke;
+  padding: 10px;
+
 }
 .text{
   max-width: 900px;
@@ -63,4 +69,10 @@ export default {
   text-align: center;
 }
 
+p.slogan{
+  margin-top: 20px;
+  font-size: 22px;
+  background-color: whitesmoke;
+  padding: 10px;
+}
 </style>
