@@ -3,7 +3,7 @@
     <div class="navs">
       <nav v-show="!collapsed">
         <div class="link" v-for="(link, index) in links" :key="link.to">
-          <router-link to="/">Menü {{index+1}}</router-link>
+          <router-link to="/">{{link.name}}</router-link>
         </div>
       </nav>
     </div>
@@ -17,11 +17,11 @@ export default {
   data(){
     return{
       links: [
-        { name: "Menu", to: "/"},
-        { name: "Menu", to: "/"},
-        { name: "Menu", to: "/"},
-        { name: "Menu", to: "/"},
-        { name: "Menu", to: "/"},
+        { name: "Home", to: "/"},
+        { name: "Fluffys", to: "/"},
+        { name: "Blog", to: "/"},
+        { name: "unsere Helden", to: "/"},
+        { name: "neue Projekte", to: "/"},
       ],
     }
   },

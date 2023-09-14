@@ -76,6 +76,7 @@ export default {
   min-height: 400px;
   height: 100%;
   background-color: var(--primary-color);
+  margin-top: 100px;
 }
 .image{
   display: flex;

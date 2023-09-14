@@ -30,4 +30,10 @@ export default {
   margin-left: auto;
   gap: 15px;
 }
+
+@media (max-width: 768px) {
+  #topnav-donation-component{
+    display: none;
+  }
+}
 </style>
