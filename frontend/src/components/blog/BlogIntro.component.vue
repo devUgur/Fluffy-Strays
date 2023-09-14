@@ -7,7 +7,6 @@
           <img src="@/assets/canva/background02.jpg" alt="">
         </div>
       </div>
-      <BlogIntroTextComponent style="z-index: 2000;"></BlogIntroTextComponent>
     </div>
   </div>
 </template>

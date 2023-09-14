@@ -29,7 +29,6 @@ export default {
 
 <style scoped>
 #topnav-social-media-component{
-  min-width: 250px;
   display: flex;
   justify-content: right;
 }
@@ -46,4 +45,12 @@ img{
 .item:hover{
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .layout{
+    display: none;
+  }
+}
+
+
 </style>

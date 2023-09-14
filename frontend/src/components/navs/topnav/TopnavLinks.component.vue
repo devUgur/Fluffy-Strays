@@ -50,4 +50,10 @@ nav a {
 nav a.router-link-exact-active {
   color: rgba(29, 29, 30, 0.79);
 }
+
+@media (max-width: 1024px) {
+  .navs{
+    display: none;
+  }
+}
 </style>

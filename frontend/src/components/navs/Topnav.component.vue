@@ -7,11 +7,13 @@
         <TopnavLogo2Component :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogo2Component>
       </div>
       <div class="links-content">
-        <TopnavLinksComponent sticky="isSticky" :collapsed="isCollapsed"></TopnavLinksComponent>
+        <TopnavLinksComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavLinksComponent>
       </div>
+
       <div class="options-content">
         <TopnavSocialMediaComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavSocialMediaComponent>
         <LanguageSelectorComponent v-if="!isSticky"></LanguageSelectorComponent>
+        <MenuButtonComponent class="menu-btn" :sticky="isSticky" :collapsed="isCollapsed"></MenuButtonComponent>
       </div>
 
       <div class="donations" :class="{'collapsed': isCollapsed}">
@@ -28,7 +30,7 @@ import TopnavLinksComponent from "@/components/navs/topnav/TopnavLinks.component
 import TopnavDonationComponent from "@/components/navs/topnav/TopnavDonation.component.vue";
 import TopnavSocialMediaComponent from "@/components/navs/topnav/TopnavSocialMedia.component.vue";
 import LanguageSelectorComponent from "@/components/selectors/LanguageSelector.component.vue";
-
+import MenuButtonComponent from "@/components/buttons/MenuButton.component.vue";
 export default {
   name: "TopnavComponent",
   components: {
@@ -37,7 +39,8 @@ export default {
     TopnavLogo2Component,
     TopnavLinksComponent,
     TopnavDonationComponent,
-    TopnavSocialMediaComponent
+    TopnavSocialMediaComponent,
+    MenuButtonComponent
   },
   data() {
     return {
@@ -51,7 +54,7 @@ export default {
     handleScroll() {
       const currentScrollY = window.scrollY;
       this.isSticky = currentScrollY > 100;
-      this.isCollapsed = window.scrollY > this.windowScrollY;
+      this.isCollapsed = (window.scrollY > this.windowScrollY) && window.scrollY > 0;
       this.windowScrollY = currentScrollY;
     },
   },
@@ -126,5 +129,24 @@ export default {
   bottom: -50px;
 }
 
+
+.menu-btn{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .topnav{
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .menu-btn{
+    display: flex;
+  }
+}
 
 </style>

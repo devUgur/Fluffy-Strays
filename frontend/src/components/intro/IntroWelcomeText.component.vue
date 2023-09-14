@@ -24,7 +24,7 @@ export default {
       show: false,
       currentLanguage: 'de', // Standardmäßig Deutsch
       welcomeTexts: {
-        de: 'Wilkommen',
+        de: 'Willkommen',
         tr: 'Hosgeldiniz',
         en: 'Welcome',
       },
