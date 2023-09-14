@@ -2,9 +2,9 @@
   <div id="intro-welcome-text-component">
     <div class="welcome-container" ref="target">
       <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
-        <div class="welcome-text" ref="text" v-show="show">
+        <h1 class="welcome-text" ref="text" v-show="show">
           {{ currentWelcomeText }}
-        </div>
+        </h1>
       </transition>
     </div>
   </div>
@@ -54,6 +54,7 @@ export default {
 
       // Erstelle eine Timeline für die Letter-Animation
       const tl = gsap.timeline();
+      console.log("wtf" , split.chars)
 
       // Setze den Anfangszustand der Buchstaben
       tl.from(split.chars, {
@@ -110,7 +111,7 @@ export default {
   watch: {
     currentWelcomeText(newVal) {
       // Wenn currentWelcomeText sich ändert, führe die Letter-Animation erneut aus
-      this.playLetterAnimation(newVal);
+      //this.playLetterAnimation(newVal);
     }
   },
 };

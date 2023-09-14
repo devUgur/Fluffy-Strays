@@ -2,7 +2,8 @@
     --home-vertical-padding: 100px;
     --home-content-gap: 30px;
 
-    --primary-color: orange;
+    --primary-color: rgb(65, 75, 178);
+    --secondary-color: rgb(149,16,172);
 }
 body{
     padding: 0;
@@ -27,7 +28,7 @@ button{
 
 .home-banner{
     min-height: 250px;
-    background: orange;
+    background: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;

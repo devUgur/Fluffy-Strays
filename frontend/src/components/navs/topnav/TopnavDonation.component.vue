@@ -54,9 +54,9 @@ button img{
 }
 
 button.donate{
-  background-color: orangered;
+  background-color: var(--secondary-color);
 }
 button.partnership{
-  background-color: cornflowerblue;
+  background-color: var(--primary-color);
 }
 </style>

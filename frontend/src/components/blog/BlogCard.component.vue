@@ -1,0 +1,104 @@
+<template>
+  <div id="blog-card-component" class="card" @mouseenter="onHover=true" @mouseleave="onHover=false">
+    <div class="image">
+      <img :src="require(`@/assets/canva/blog/${blog.filename}`)" alt="Blog Image">
+    </div>
+    <div class="content">
+      <p class="title">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae obcaecati perferendis tempora unde vel voluptatem.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, corporis deserunt dolorem doloremque
+        id in minima odio possimus suscipit unde? Dicta earum id nemo pariatur quaerat. Ducimus explicabo iste
+        veritatis.
+      </p>
+      <div class="visit">
+        <transition name="slide-fade">
+          <div class="blog-route" v-show="onHover">
+            <router-link :to="blog.to">Erfahren Sie mehr</router-link>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "BlogCardComponent",
+  props: ['blog'],
+  data(){
+    return {
+      onHover: false,
+    }
+  },
+}
+</script>
+
+<style scoped>
+.card{
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #e1e1e1;
+  transition: box-shadow 0.5s;
+  border: 3px solid rgb(220,220,220);
+  max-width: calc(400px);
+}
+.card:hover{
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+}
+.image{
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.content{
+  width: 260px;
+  padding: 20px;
+  background-color: white;
+}
+.content p{
+  margin-bottom: 15px;
+}
+
+p.title{
+  font-weight: bold;
+}
+
+.image img{
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease-in-out;
+}
+
+.card:hover .image img{
+  transform: scale(1.1);
+}
+
+.visit{
+  height: 20px;
+  overflow: hidden;
+}
+
+
+.blog-route{
+  transition: all 0.3s ease-out;
+}
+
+
+.slide-fade-enter-active {
+  /*transition: all 0.3s ease-out;*/
+  /*transition: all 0.3s ease-out;*/
+}
+
+.slide-fade-leave-active {
+  /*ransition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);*/
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+</style>

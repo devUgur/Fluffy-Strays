@@ -75,7 +75,7 @@ export default {
   flex-direction: column;
   min-height: 400px;
   height: 100%;
-  background-color: grey;
+  background-color: var(--primary-color);
 }
 .image{
   display: flex;
