@@ -53,7 +53,6 @@ export default {
   text-align: center;
   background-color: whitesmoke;
   padding: 10px;
-
 }
 .text{
   max-width: 900px;
@@ -63,7 +62,6 @@ export default {
 .text h5{
   font-size: 22px;
   margin-bottom: 15px;
-
 }
 .text h5, p{
   text-align: center;

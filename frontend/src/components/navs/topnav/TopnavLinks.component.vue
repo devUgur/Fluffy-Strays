@@ -3,7 +3,7 @@
     <div class="navs">
       <nav v-show="!collapsed">
         <div class="link" v-for="(link, index) in links" :key="link.to">
-          <router-link to="/">{{link.name}}</router-link>
+          <router-link :to="link.to">{{link.name}}</router-link>
         </div>
       </nav>
     </div>
@@ -19,7 +19,7 @@ export default {
       links: [
         { name: "Home", to: "/"},
         { name: "Fluffys", to: "/"},
-        { name: "Blog", to: "/"},
+        { name: "Blog", to: "/blog"},
         { name: "unsere Helden", to: "/"},
         { name: "neue Projekte", to: "/"},
       ],
