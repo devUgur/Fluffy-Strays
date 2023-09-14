@@ -14,12 +14,12 @@ export default {
   data(){
     return{
       blogs: [
-        { title: '', filename:'blog01.png', descr: '', to: '' },
-        { title: '', filename:'blog02.png', descr: '', to: '' },
-        { title: '', filename:'blog04.png', descr: '', to: '' },
-        { title: '', filename:'blog05.png', descr: '', to: '' },
-        { title: '', filename:'blog06.png', descr: '', to: '' },
-        { title: '', filename:'blog08.png', descr: '', to: '' },
+        { _id:"0", title: '', filename:'blog01.png', descr: '', to: '' },
+        { _id:"1", title: '', filename:'blog02.png', descr: '', to: '' },
+        { _id:"2", title: '', filename:'blog04.png', descr: '', to: '' },
+        { _id:"3", title: '', filename:'blog05.png', descr: '', to: '' },
+        { _id:"4", title: '', filename:'blog06.png', descr: '', to: '' },
+        { _id:"5", title: '', filename:'blog08.png', descr: '', to: '' },
       ]
     }
   }

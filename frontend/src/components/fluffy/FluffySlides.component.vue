@@ -84,7 +84,7 @@ export default {
   display: flex;
   place-items: center;
   justify-content: center;
-  background-color: grey;
+  background-color: var(--primary-color);
   padding: 50px 0;
 }
 

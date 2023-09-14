@@ -5,6 +5,7 @@ import MainLayout from "@/layouts/Main.layout.vue";
 
 // Views
 import HomeView from "@/views/Home.view.vue";
+import BlogView from "@/views/Blog.view.vue";
 
 // Components
 import OneFluffyComponent from "@/components/fluffy/OneFluffy.component.vue";
@@ -15,6 +16,7 @@ const routes = [
     component:  MainLayout,
     children: [
       { name: "Home", path: "/", component: HomeView },
+      { name: "Blog", path: "/blog/:id", component:  BlogView },
       { name: "Fluffy", path: "/fluffy/:id", component:  OneFluffyComponent },
     ]
   },

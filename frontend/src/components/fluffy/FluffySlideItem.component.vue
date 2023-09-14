@@ -2,7 +2,6 @@
   <div id="fluffy-slide-item-component">
     <div class="list-item"
          :key="fluffy.imgName"
-
          @click="toFluffy(fluffy._id)"
     >
       <div class="image">
@@ -24,11 +23,10 @@ export default {
   },
   methods: {
     toFluffy(id){
-      console.log(id)
-      this.$router.push('/fluffy/'+id);
+      const url = '/fluffy/' + id;
+      window.open(url, '_blank');
     }
   }
-
 }
 </script>
 

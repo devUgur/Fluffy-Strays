@@ -25,7 +25,7 @@ button{
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
-
+/* HOME */
 .home-banner{
     min-height: 250px;
     background: var(--primary-color);
@@ -33,5 +33,29 @@ button{
     flex-direction: column;
     justify-content: center;
     place-items: center;
+}
+
+/* TOPNAV donation buttons */
+#topnav-donation-component button{
+    max-width: 220px;
+    padding: 10px 40px;
+    width: 100%;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    place-items: center;
+    gap: 15px;
+    white-space: nowrap;
+    justify-content: center;
+    transition: box-shadow 0.5s;
+}
+
+#topnav-donation-component button:hover{
+    box-shadow: rgba(100, 100, 111, 0.5) 0 7px 29px 0;
+}
+
+#topnav-donation-component button img{
+    height: 22px;
 }
 

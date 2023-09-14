@@ -1,22 +1,22 @@
 <template>
-  <div id="topnav-donation-component" :class="{'collapsed': collapsed}">
+  <div id="topnav-donation-component">
     <div class="donation">
-      <button class="donate">
-        <span>Jetzt spenden</span>
-        <img src="@/assets/flaticons/heart-white.png" alt="">
-      </button>
-      <button class="partnership">
-        <span>Pate werden</span>
-        <img src="@/assets/flaticons/right-arrow-white.png" alt="">
-      </button>
+      <DonationButtonComponent></DonationButtonComponent>
+      <GodfatherButtonComponent></GodfatherButtonComponent>
     </div>
   </div>
 </template>
 
 <script>
+import DonationButtonComponent from "@/components/buttons/DonationButton.component.vue";
+import GodfatherButtonComponent from "@/components/buttons/GodfatherButton.component.vue";
 export default {
   props: ['sticky', 'collapsed'],
-  name: "TopnavDonationComponent"
+  name: "TopnavDonationComponent",
+  components: {
+    DonationButtonComponent,
+    GodfatherButtonComponent
+  }
 }
 </script>
 
@@ -25,38 +25,9 @@ export default {
   position: sticky;
   right: 20px;
 }
-#topnav-donation-component.collapsed{
-  position: absolute !important;
-  background-color: lightgreen;
-}
 .donation{
   display: flex;
   margin-left: auto;
   gap: 15px;
-}
-
-button{
-  max-width: 220px;
-  padding: 10px 40px;
-  width: 100%;
-  border-radius: 3px;
-  color: white;
-  font-size: 16px;
-  display: flex;
-  place-items: center;
-  gap: 15px;
-  white-space: nowrap;
-  justify-content: center;
-}
-
-button img{
-  height: 22px;
-}
-
-button.donate{
-  background-color: var(--secondary-color);
-}
-button.partnership{
-  background-color: var(--primary-color);
 }
 </style>

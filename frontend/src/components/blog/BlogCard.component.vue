@@ -15,7 +15,7 @@
       <div class="visit">
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
-            <router-link :to="blog.to">Erfahren Sie mehr</router-link>
+            <router-link :to="'/blog/'+blog._id" target="_blank">Erfahren Sie mehr</router-link>
           </div>
         </transition>
       </div>
@@ -45,7 +45,7 @@ export default {
   max-width: calc(400px);
 }
 .card:hover{
-  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.5) 0 7px 29px 0;
 }
 .image{
   height: 200px;
