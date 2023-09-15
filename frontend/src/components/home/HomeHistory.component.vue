@@ -1,12 +1,7 @@
 <template>
   <div id="home-history-component">
     <div class="container">
-      <div class="home-banner"></div>
-      <div class="video">
-        <video controls width="250">
-          <source src="@/assets/videos/history2.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <AboutVideoBannerComponent></AboutVideoBannerComponent>
       <div class="content">
         <div class="item">
           <div class="text">
@@ -42,34 +37,20 @@
 </template>
 
 <script>
+import AboutVideoBannerComponent from "@/components/videos/AboutVideoBanner.component.vue";
 export default {
   name: "HomeHistoryComponent",
-  methods: {
-
-  },
+  components: {
+    AboutVideoBannerComponent
+  }
 };
 </script>
 
 <style scoped>
-.container{
 
-}
 
-.video {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: -125px;
 
-}
 
-video{
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
 
 .content{
   max-width: 1200px;
@@ -78,12 +59,19 @@ video{
   gap: 100px;
   margin: 0 auto;
   padding: 150px 0 100px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .content .item{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
+}
+
+.content .item:last-child{
+  flex-wrap: wrap-reverse;
 }
 
 .text {
@@ -94,6 +82,7 @@ video{
   max-width: 500px;
   height: 300px;
   width: 100%;
+  flex: 1 1 200px;
 }
 
 p.reference{
@@ -102,7 +91,8 @@ p.reference{
 
 .image{
   background-color: #b7b7b7;
-  max-width: 500px;
+  height: 300px;
+  flex: 1 1 200px;
   width: 100%;
   display: flex;
   place-items: center;

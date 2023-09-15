@@ -109,7 +109,7 @@ export default {
 
 
 .content .left .image{
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .content .left .image img{

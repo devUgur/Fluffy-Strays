@@ -99,7 +99,7 @@ export default {
   },
   mounted() {
     const options = {
-      threshold: 1.0,
+      threshold: 0.0,
     };
 
     const observer = new IntersectionObserver(async ([entry]) => {
@@ -118,11 +118,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add styles for letter animation */
-.letter {
-  display: inline-block;
-  transform-origin: center bottom;
-}
+
 .welcome-container {
   position: absolute;
   width: 100%;
@@ -142,10 +138,12 @@ export default {
   padding: 10px 20px;
   border-radius: 5px;
   color: whitesmoke;
+  width: 100%;
 }
-/* Add styles for letter animation */
-.letter {
-  display: inline-block;
-  transform-origin: center bottom;
+
+@media (max-width: 768px) {
+  .welcome-text{
+    font-size: 48px;
+  }
 }
 </style>

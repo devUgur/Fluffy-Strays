@@ -3,10 +3,11 @@
     <div class="container">
       <h1> Fluffy Strays</h1>
       <p class="slogan">Hilf uns zu helfen <img src="@/assets/flaticons/drwan-heart.png"></p>
-      <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis fugiat neque nisi officia
-        quibusdam rerum sint totam, unde veritatis. Ab aspernatur beatae dolores esse minima porro, quam temporibus
-        veritatis.
-      </p>
+      <p class="text"> Herzlich Willkommen auf unserer Webseite </p>
+      <p class="text"> Hier schlagen unsere Herzen im Einklang <br> mit den Straßentieren, die unsere Hilfe so dringend benötigen. </p>
+      <p class="text"> Unser Ziel ist es, diesen unschuldigen Geschöpfen, den Hunger zu nehmen, deren <br> Schmerzen zu lindern und ihnen ein neues glücklicheres Leben zu schenken.  </p>
+      <p class="text"> Mit deiner Unterstützung können wir gemeinsam wahre Wunder bewirken. Tauche ein <br> in unsere Projekte, spüre die Geschichten und werde ein Teil <br> unserer Fluffy Strays Familie, die für das Wohl der Straßentiere kämpft. </p>
+      <p class="text"> Dein Beitrag bedeutet nicht nur Leben, sondern auch Liebe und Geborgenheit. <br> Gemeinsam schaffen wir eine Welt, in der die flauschigen Streuner ein glückliches <br> und gesundes Leben genießen können. </p>
     </div>
   </div>
 </template>
@@ -23,11 +24,10 @@ export default {
   text-align: center;
 }
 .container{
-  padding: var(--home-vertical-padding) 0;
+  padding: var(--home-vertical-padding) 30px;
 }
 p{
-  font-weight: bold;
-  font-size: 13px;
+  font-size: 16px;
 }
 p.slogan{
   display: flex;
@@ -38,8 +38,8 @@ p.slogan{
   font-family: Indie, sans-serif;
 }
 
-.about-text{
-  max-width: 600px;
+.text{
+  max-width: 700px;
   margin: 40px auto;
 }
 

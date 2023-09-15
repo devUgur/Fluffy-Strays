@@ -2,7 +2,8 @@
   <div id="home-feedback-component">
     <div class="container">
       <div class="title">
-        <h1>Das sagen unsere Unterstützer</h1>
+        <!--<h1>Das sagen unsere Unterstützer</h1>-->
+        <h1>Es ist mir eine Ehre unsere Helden zu präsentieren</h1>
       </div>
       <div class="slides">
         <Flicking class="content" :options="flickingOptions" :plugins="plugins">
@@ -31,6 +32,10 @@
           </template>
           -->
         </Flicking>
+      </div>
+      <div class="title">
+        <h2>Dank eurer finanziellen Unterstützung
+          können wir so viel Bewegen</h2>
       </div>
     </div>
   </div>
@@ -62,6 +67,8 @@ export default {
         align: "center",
         circular: true, // Aktiviere den endlosen Schleifenmodus
         autoResize: true,
+        adaptive: true,
+        //horizontal:true,
       },
       slides: [
         {
@@ -99,11 +106,13 @@ export default {
 @import url("../../../node_modules/@egjs/vue3-flicking/dist/flicking.css");
 @import url("../../../node_modules/@egjs/vue3-flicking/dist/flicking-inline.css");
 .container {
-  padding: var(--home-vertical-padding) 0;
+  padding: var(--home-vertical-padding) 30px;
 }
 
 .title {
   text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .slides{
@@ -119,9 +128,10 @@ export default {
 .card-panel{
   background-color: white;
   max-width: 420px;
+  width: calc(100% - 40px);
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
-  padding: 30px 40px;
   transition: box-shadow 0.5s;
+  padding: 30px 20px;
 }
 
 .card-panel:hover{
@@ -129,11 +139,7 @@ export default {
 }
 
 .slide{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  height: 100%;
+
 
 }
 

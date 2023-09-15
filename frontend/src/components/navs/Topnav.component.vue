@@ -13,7 +13,7 @@
       <div class="options-content">
         <TopnavSocialMediaComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavSocialMediaComponent>
         <LanguageSelectorComponent v-if="!isSticky"></LanguageSelectorComponent>
-        <MenuButtonComponent class="menu-btn" :sticky="isSticky" :collapsed="isCollapsed"></MenuButtonComponent>
+        <MenuButtonComponent v-show="!isCollapsed" class="menu-btn" :sticky="isSticky" :collapsed="isCollapsed"></MenuButtonComponent>
       </div>
 
       <div class="donations" :class="{'collapsed': isCollapsed}">

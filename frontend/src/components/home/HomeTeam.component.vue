@@ -28,45 +28,37 @@ export default {
   display: flex;
   flex-direction: column;
   place-items: center;
-  gap: 100px;
 }
 
 .content{
   display: flex;
   max-width: 1200px;
   width: 100%;
+  flex-wrap: wrap;
+  background-color: grey;
+
 }
 
-
-
-.case-study .image{
-  height: 300px;
-  width: 500px;
+.text, .image{
+  height: 400px;
 }
-
-.case-study .text{
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 20px;
-  justify-content: center;
-}
-
 .text{
   display: flex;
   flex-direction: column;
   justify-content: left;
   gap: 20px;
-  width: 100%;
+  flex: 1 1 400px;
+  padding: 30px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
 }
-
-
 
 .image{
   display: flex;
   justify-content: center;
   place-items: center;
   background-color: lightgrey;
-
+  flex: 1 1 400px;
 }
 
 /* Fügen Sie die folgenden CSS-Regeln hinzu, um den Button anzupassen */
@@ -82,17 +74,10 @@ export default {
 
 
 .content.team{
-  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.content.team .text{
-  padding: 20px;
-  width: calc(50% - 40px);
-  color: white;
-}
-.content.team .image{
-  width: 50%;
-}
 
 .content.team .text .descr{
   max-width: 300px;

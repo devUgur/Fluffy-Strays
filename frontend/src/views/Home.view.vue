@@ -4,10 +4,10 @@
     <HomeAboutComponent></HomeAboutComponent>
     <HomeFluffysComponent></HomeFluffysComponent>
     <HomeBlogComponent></HomeBlogComponent>
-    <HomeBannerComponent></HomeBannerComponent>
+    <HomeBannerComponent :text="'Die größte Ehre, die man einem Menschen antun kann, ist die, dass man zu ihm Vertrauen hat. - Matthias Claudius'"></HomeBannerComponent>
     <HomeFeedbackComponent></HomeFeedbackComponent>
     <HomeHistoryComponent></HomeHistoryComponent>
-    <HomeBannerComponent></HomeBannerComponent>
+    <HomeBannerComponent :text="'Wir können zusammen ein Lichtblick in dieser dunklen Zeit sein, wenn wir gemeinsam ein Zeichen gegen das Elend setzen.'"></HomeBannerComponent>
     <HomeTeamComponent></HomeTeamComponent>
     <HomeOurSuccessComponent></HomeOurSuccessComponent>
   </div>
