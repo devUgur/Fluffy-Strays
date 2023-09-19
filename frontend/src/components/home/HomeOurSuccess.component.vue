@@ -2,8 +2,7 @@
   <div id="home-our-success-component">
     <div class="container">
       <div class="title">
-        <h1>Unsere bisherigen Erfolge</h1>
-        <p class="slogan">dank unserer großzügigen Unterstützer <img src="@/assets/flaticons/drwan-heart.png"></p>
+        <TitleComponent :title="'Unsere bisherigen Erfolge'" :slogan="'dank unserer großzügigen Unterstützer'"></TitleComponent>
       </div>
       <div class="content">
         <div class="list">
@@ -38,8 +37,12 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 export default {
-  name: "HomeOurSuccessComponent"
+  name: "HomeOurSuccessComponent",
+  components: {
+    TitleComponent,
+  }
 }
 </script>
 

@@ -2,8 +2,8 @@
   <div id="home-feedback-component">
     <div class="container">
       <div class="title">
+        <TitleComponent :title="'Es ist mir eine Ehre unsere Helden zu präsentieren'"></TitleComponent>
         <!--<h1>Das sagen unsere Unterstützer</h1>-->
-        <h1>Es ist mir eine Ehre unsere Helden zu präsentieren</h1>
       </div>
       <div class="slides">
         <Flicking class="content" :options="flickingOptions" :plugins="plugins">
@@ -44,6 +44,7 @@
 
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/flicking-plugins/dist/pagination.css";
 import { Pagination } from "@egjs/flicking-plugins";
@@ -53,6 +54,7 @@ import { Perspective } from "@egjs/flicking-plugins";
 export default {
   name: "HomeFeedbackComponent",
   components: {
+    TitleComponent,
     Flicking: Flicking,
   },
   data(){

@@ -109,9 +109,8 @@ export default {
     observer.observe(this.$refs.target);
   },
   watch: {
-    currentWelcomeText(newVal) {
-      // Wenn currentWelcomeText sich ändert, führe die Letter-Animation erneut aus
-      //this.playLetterAnimation(newVal);
+    show(newVal) {
+      console.log(newVal)
     }
   },
 };

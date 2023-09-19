@@ -1,20 +1,19 @@
 <template>
   <div id="fluffy-strays-blog-component">
     <div class="container">
-      <div class="title">
-        <h1> der Fluffy Strays Blog</h1>
-        <p>neues aus dem Leben der flauschigen Streuner</p>
-      </div>
+      <TitleComponent :title="'der Fluffy Strays Blog'" :slogan="'neues aus dem Leben der flauschigen Streuner'"></TitleComponent>
       <BlogListComponent></BlogListComponent>
     </div>
   </div>
 </template>
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 import BlogListComponent from "@/components/blog/BlogList.component.vue";
 export default {
   name: "HomeBlogComponent",
   components: {
+    TitleComponent,
     BlogListComponent,
   }
 }

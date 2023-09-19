@@ -1,18 +1,18 @@
 <template id="blog-view">
   <div>
     <BlogIntroComponent></BlogIntroComponent>
-    <OneBlogComponent></OneBlogComponent>
+    <OneBlogListComponent></OneBlogListComponent>
   </div>
 </template>
 
 <script>
 import BlogIntroComponent from "@/components/blog/BlogIntro.component.vue";
-import OneBlogComponent from "@/components/blog/OneBlog.component.vue";
+import OneBlogListComponent from "@/components/blog/OneBlogList.component.vue";
 export default {
   name: "BlogView",
   components: {
     BlogIntroComponent,
-    OneBlogComponent
+    OneBlogListComponent
   }
 }
 </script>

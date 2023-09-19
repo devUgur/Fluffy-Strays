@@ -1,18 +1,17 @@
 <template>
   <div id="fluffy-pick-slide">
-    <div class="title">
-      <h1>unsere Fluffys</h1>
-      <p>Wähle dein Liebling</p>
-    </div>
+    <TitleComponent :title="'unsere Fluffys'" :slogan="'Wähle dein Liebling'"></TitleComponent>
     <FluffySlidesComponent></FluffySlidesComponent>
   </div>
 </template>
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 import FluffySlidesComponent from "@/components/fluffy/FluffySlides.component.vue";
 export default {
   name: "FluffyPickSlideComponent",
   components: {
+    TitleComponent,
     FluffySlidesComponent
   }
 

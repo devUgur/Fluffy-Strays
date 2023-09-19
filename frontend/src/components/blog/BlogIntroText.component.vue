@@ -36,7 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
   place-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   height: calc(80vh - 50px);
   color: rgba(29, 29, 30, 0.79);
 }

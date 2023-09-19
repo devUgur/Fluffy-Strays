@@ -1,8 +1,7 @@
 <template>
   <div id="about-text-component">
     <div class="container">
-      <h1> Fluffy Strays</h1>
-      <p class="slogan">Hilf uns zu helfen <img src="@/assets/flaticons/drwan-heart.png"></p>
+      <TitleComponent :title="'Fluffy Strays'" :slogan="'Hilf uns zu helfen'"></TitleComponent>
       <p class="text"> Herzlich Willkommen auf unserer Webseite </p>
       <p class="text"> Hier schlagen unsere Herzen im Einklang <br> mit den Straßentieren, die unsere Hilfe so dringend benötigen. </p>
       <p class="text"> Unser Ziel ist es, diesen unschuldigen Geschöpfen, den Hunger zu nehmen, deren <br> Schmerzen zu lindern und ihnen ein neues glücklicheres Leben zu schenken.  </p>
@@ -13,9 +12,12 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 export default {
   name: "HomeView",
-  components: {}
+  components: {
+    TitleComponent
+  }
 }
 </script>
 
