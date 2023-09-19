@@ -52,7 +52,7 @@ button{
 }
 
 #topnav-donation-component button:hover{
-    box-shadow: rgba(100, 100, 111, 0.5) 0 7px 29px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #topnav-donation-component button img{

@@ -15,7 +15,7 @@
       <div class="visit">
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
-            <router-link :to="'/blog/'+blog._id" target="_blank">Erfahren Sie mehr</router-link>
+            <router-link :to="'/blog/'+blog._id" target="_blank">jetzt weiterlesen</router-link>
           </div>
         </transition>
       </div>

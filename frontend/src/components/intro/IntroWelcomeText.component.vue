@@ -15,9 +15,9 @@
 
 <script>
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CSSPlugin } from 'gsap/CSSPlugin'; // Import the CSSPlugin
 
-gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
 import SplitType from 'split-type';
 
 import TitleComponent from "@/components/title/title.component.vue";
@@ -52,7 +52,7 @@ export default {
     },
   },
   methods: {
-    async enterAnimation() {
+    async animate() {
       await this.$nextTick(() => {});
       const el = this.$refs.welcomeText;
 
@@ -83,7 +83,6 @@ export default {
 
       // Add a delay before updating currentIndex
       tl.to({}, {
-        opacity: 1,
         duration: 1,
       });
 
@@ -97,19 +96,22 @@ export default {
             duration: 0.5,
             onComplete: () => {
               split.revert();
-              this.currentIndex = (this.currentIndex + 1) % this.multiLangWelcomeText.length;
-              gsap.set(this.$refs.welcomeText, {
+              tl.set(this.$refs.welcomeText, {
                 opacity: 1
               });
+              this.currentIndex = (this.currentIndex + 1) % this.multiLangWelcomeText.length;
             }
           }
       );
     },
   },
-
+  mounted() {
+    gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
+    gsap.registerPlugin(ScrollTrigger);
+  },
   watch: {
     currentWelcomeText(newVal) {
-      this.enterAnimation();
+      this.animate();
     },
   },
 };

@@ -11,23 +11,23 @@
           <h2> Folgst du uns schon ?</h2>
           <div class="list">
             <div class="list-item">
-              <img src="@/assets/flaticons/img.png" alt="">
+              <img src="@/assets/flaticons/social/youtube.png" alt="">
               <h3> Youtube </h3>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/img.png" alt="">
+              <img src="@/assets/flaticons/social/instagram.png" alt="">
               <h3> Instagram </h3>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/img.png" alt="">
+              <img src="@/assets/flaticons/social/pinterest.png" alt="">
               <h3> Pinterest </h3>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/img.png" alt="">
+              <img src="@/assets/flaticons/social/facebook.png" alt="">
               <h3> Facebook </h3>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/img.png" alt="">
+              <img src="@/assets/flaticons/social/tik-tok.png" alt="">
               <h3> TikTok </h3>
             </div>
           </div>
@@ -151,7 +151,19 @@ h2{
   width: 100%;
 }
 
+.social .list-item:hover{
+  cursor: pointer;
+}
+.social .list-item:hover h3{
+  text-decoration: underline;
+}
+
+.social .list-item:hover img{
+  box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}
+
 .social img{
+  transition: box-shadow 0.5s;
   border-radius: 50%;
 }
 

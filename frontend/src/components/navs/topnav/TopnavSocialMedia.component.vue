@@ -40,10 +40,16 @@ export default {
 
 img{
   height: 32px;
+  border-radius: 50%;
+
 }
 
 .item:hover{
   cursor: pointer;
+}
+
+.item:hover img{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @media (max-width: 1200px) {

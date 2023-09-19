@@ -77,6 +77,7 @@ export default {
 .text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 15px;
 
   max-width: 500px;
@@ -122,7 +123,6 @@ img.default{
 
 
 .text.right{
-  text-align: right;
 }
 
 .text.right button{
