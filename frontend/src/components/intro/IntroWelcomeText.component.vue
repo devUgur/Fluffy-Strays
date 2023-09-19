@@ -1,11 +1,16 @@
 <template>
   <div id="intro-welcome-text-component">
     <div class="welcome-container" ref="target">
-      <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
-        <h1 class="welcome-text" ref="text" v-show="show">
-          {{ currentWelcomeText }}
-        </h1>
-      </transition>
+      <div class="logo">
+        <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
+          <h1>Fluffy Strays</h1>
+        </transition>
+        <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
+          <p class="slogan"> Hilf uns zu Helfen </p>
+        </transition>
+      </div>
+
+      <div class="text"> Herzlich Willkommen auf unserer Webseite </div>
     </div>
   </div>
 </template>
@@ -17,8 +22,13 @@ import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import TitleComponent from "@/components/title/title.component.vue";
+
 export default {
   name: "IntroWelcomeTextComponent",
+  components: {
+    TitleComponent,
+  },
   data() {
     return {
       show: false,
@@ -117,32 +127,54 @@ export default {
 </script>
 
 <style scoped>
-
-.welcome-container {
+#intro-welcome-text-component{
   position: absolute;
-  width: 100%;
+  width: calc(100% - 60px);
   display: flex;
   place-items: center;
   justify-content: center;
   height: 100%;
-}
-.welcome-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 84px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 5px;
   color: whitesmoke;
-  width: 100%;
+  padding: 0 20px;
+  text-shadow:  1px  1px 1px black,
+  1px -1px 1px black,
+  -1px  1px 1px black,
+  -1px -1px 1px black;
+}
+
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  height: calc(100%);
+}
+
+h1 {
+  font-size: 64px;
+}
+
+p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.text{
+  font-size: 32px;
 }
 
 @media (max-width: 768px) {
-  .welcome-text{
+  h1{
     font-size: 48px;
+  }
+
+  p {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .text{
+    font-size: 22px;
   }
 }
 </style>

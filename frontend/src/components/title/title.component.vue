@@ -16,7 +16,8 @@ export default {
 <style scoped>
 #title-component{
   text-align: center;
-  background-color: aquamarine;
+  margin: var(--home-vertical-padding) 0;
+
 }
 p.slogan{
   display: flex;
