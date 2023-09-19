@@ -16,11 +16,12 @@ export default {
 <style scoped>
 #title-component{
   text-align: center;
-  margin: var(--home-vertical-padding) 0;
+  margin: var(--home-vertical-padding) 30px;
 
 }
 p.slogan{
   display: flex;
+  flex-direction: column;
   place-items: center;
   justify-content: center;
   gap: 10px;

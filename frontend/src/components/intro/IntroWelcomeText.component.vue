@@ -2,25 +2,23 @@
   <div id="intro-welcome-text-component">
     <div class="welcome-container" ref="target">
       <div class="logo">
-        <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
-          <h1>Fluffy Strays</h1>
-        </transition>
-        <transition appear @before-enter="beforeEnterAnimation" @enter="enterAnimation" :key="currentLanguage">
-          <p class="slogan"> Hilf uns zu Helfen </p>
-        </transition>
+        <h1>Fluffy Strays</h1>
+        <p class="slogan">Hilf uns zu Helfen</p>
       </div>
 
-      <div class="text"> Herzlich Willkommen auf unserer Webseite </div>
+      <transition :key="currentLanguage">
+        <p class="text" ref="welcomeText" v-text="currentWelcomeText"> </p>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SplitType from 'split-type';
+import { CSSPlugin } from 'gsap/CSSPlugin'; // Import the CSSPlugin
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
+import SplitType from 'split-type';
 
 import TitleComponent from "@/components/title/title.component.vue";
 
@@ -33,18 +31,19 @@ export default {
     return {
       show: false,
       currentLanguage: 'de', // Standardmäßig Deutsch
-      welcomeTexts: {
-        de: 'Willkommen',
-        tr: 'Hosgeldiniz',
-        en: 'Welcome',
-      },
+      currentIndex: 0,
+      multiLangWelcomeText: [
+        'Herzlich Willkommen auf unserer Webseite.',
+        'Web sitemize hoş geldiniz.',
+        'Welcome to our website.',
+      ],
     };
   },
   computed: {
     currentWelcomeText() {
       const currentShortLang = this.$store.getters['language/current'];
       if (currentShortLang) {
-        const welcomeText = this.welcomeTexts[currentShortLang.short.toLowerCase()];
+        const welcomeText = this.multiLangWelcomeText[this.currentIndex];
         if (welcomeText) {
           return welcomeText;
         }
@@ -53,43 +52,12 @@ export default {
     },
   },
   methods: {
-    async playLetterAnimation() {
-      const el = this.$refs.text;
-      el.innerText = this.currentWelcomeText;
-      const split = new SplitType(el);
-      if (split.chars.length === 0) {
-        console.log("Split chars length === 0");
-        return;
-      }
+    async enterAnimation() {
+      await this.$nextTick(() => {});
+      const el = this.$refs.welcomeText;
 
-      // Erstelle eine Timeline für die Letter-Animation
-      const tl = gsap.timeline();
-      console.log("wtf" , split.chars)
-
-      // Setze den Anfangszustand der Buchstaben
-      tl.from(split.chars, {
-        y: 100,
-        opacity: 0,
-        stagger: 0.05,
-        ease: 'power2.out',
-      });
-    },
-    beforeEnterAnimation(el) {
-      /*
-      const split = new SplitType(el);
-      if (split.chars.length === 0) {
-        console.log("Split chars length === 0");
-        return;
-      }
-
-      // Set initial letter state
-      gsap.set(split.chars, { y: 100, opacity: 0 });
-       */
-    },
-    enterAnimation(el) {
-      // You can add any enter animations here if needed.
       // Initialize SplitType for the text element
-      const split = new SplitType(el);
+      const split = await SplitType.create(el);
       if (split.chars.length === 0) {
         console.log("Split chars length === 0");
         return;
@@ -98,33 +66,55 @@ export default {
       // Create a timeline for the letter animation
       const tl = gsap.timeline();
 
-      // Set initial letter state
-      tl.from(split.chars, {
-        y: 100,
-        opacity: 0,
-        stagger: 0.05,
-        ease: 'power2.out',
+      // Use fromTo to animate opacity
+      tl.fromTo(
+          split.chars, // Target elements
+          {
+            y: 100,
+            opacity: 0, // Start opacity
+          },
+          {
+            y: 0,
+            opacity: 1, // End opacity
+            stagger: 0.05,
+            ease: 'power2.out',
+          }
+      );
+
+      // Add a delay before updating currentIndex
+      tl.to({}, {
+        opacity: 1,
+        duration: 1,
       });
+
+      tl.fromTo(this.$refs.welcomeText, // Target elements
+          {
+            opacity: 1, // Start opacity
+          },
+          {
+            y: 0,
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+              split.revert();
+              this.currentIndex = (this.currentIndex + 1) % this.multiLangWelcomeText.length;
+              gsap.set(this.$refs.welcomeText, {
+                opacity: 1
+              });
+            }
+          }
+      );
     },
   },
-  mounted() {
-    const options = {
-      threshold: 0.0,
-    };
 
-    const observer = new IntersectionObserver(async ([entry]) => {
-      this.show = entry && entry.isIntersecting;
-    }, options);
-
-    observer.observe(this.$refs.target);
-  },
   watch: {
-    show(newVal) {
-      console.log(newVal)
-    }
+    currentWelcomeText(newVal) {
+      this.enterAnimation();
+    },
   },
 };
 </script>
+
 
 <style scoped>
 #intro-welcome-text-component{
@@ -135,7 +125,7 @@ export default {
   justify-content: center;
   height: 100%;
   color: whitesmoke;
-  padding: 0 20px;
+  padding: 0 30px;
   text-shadow:  1px  1px 1px black,
   1px -1px 1px black,
   -1px  1px 1px black,
@@ -161,6 +151,7 @@ p {
 
 .text{
   font-size: 32px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
