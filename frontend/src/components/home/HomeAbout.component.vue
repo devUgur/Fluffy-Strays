@@ -92,8 +92,9 @@ p > span {
 }
 
 .text{
-  max-width: 1100px;
+  max-width: 900px;
   margin: 40px auto;
+  line-height: 35px;
 }
 
 img{
