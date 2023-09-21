@@ -4,15 +4,15 @@
       <img :src="require(`@/assets/canva/blog/${blog.filename}`)" alt="Blog Image">
     </div>
     <div class="content">
-      <p class="title">
+      <p class="item title">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae obcaecati perferendis tempora unde vel voluptatem.
       </p>
-      <p>
+      <p class="item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, corporis deserunt dolorem doloremque
         id in minima odio possimus suscipit unde? Dicta earum id nemo pariatur quaerat. Ducimus explicabo iste
         veritatis.
       </p>
-      <div class="visit">
+      <div class="item visit">
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
             <router-link :to="'/blog/'+blog._id" target="_blank">
@@ -62,6 +62,10 @@ export default {
   background-color: white;
 }
 .content p{
+  margin-bottom: 15px;
+}
+
+.content .item{
   margin-bottom: 15px;
 }
 

@@ -3,7 +3,10 @@
     <div class="navs">
       <nav v-show="!collapsed">
         <div class="link" v-for="(link, index) in links" :key="link.to">
-          <router-link :to="link.to">{{link.name}}</router-link>
+          <router-link :to="link.to">
+            <div>{{link.name}}</div>
+            <img src="@/assets/flaticons/pet.png" alt="">
+          </router-link>
         </div>
       </nav>
     </div>
@@ -45,10 +48,24 @@ nav a {
   font-size: 18px;
   color: #2c3e50;
   text-decoration: none;
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
 nav a.router-link-exact-active {
   color: rgba(29, 29, 30, 0.79);
+}
+
+nav a:hover img{
+  opacity: 0.3;
+}
+
+nav a img{
+  opacity: 0;
+  transition: opacity 0.7s;
+  position: absolute;
+  height: 42px;
 }
 
 @media (max-width: 1024px) {

@@ -9,13 +9,13 @@
         <Flicking class="content" :options="flickingOptions" :plugins="plugins">
           <div class="card-panel" v-for="(slide, index) in slides" :key="index">
            <div class="slide">
-             <div class="profile">
+             <div class="item profile">
               <img src="@/assets/flaticons/default_user.png" alt="">
-            </div>
-             <div class="comment">
+             </div>
+             <div class="item comment">
                <p>{{slide.text}}</p>
              </div>
-             <div class="to">
+             <div class="item to">
                <router-link to="">Helfen auch Sie um zu helfen</router-link>
              </div>
            </div>
@@ -142,7 +142,10 @@ export default {
 
 .slide{
 
+}
 
+.slide .item{
+  margin-bottom: 15px;
 }
 
 .profile{
