@@ -1,0 +1,73 @@
+/* Transitions */
+
+/* we will explain what these classes do next!
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+*/
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* fade UP */
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-up-enter-from,
+.fade-up-leave-to {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+/* fade DOWN */
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-down-enter-from,
+.fade-down-leave-to {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+
+/* fade RIGHT */
+.fade-right-enter-active,
+.fade-right-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-right-enter-from,
+.fade-right-leave-to {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+/* fade LEFT */
+.fade-left-enter-active,
+.fade-left-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-left-enter-from,
+.fade-left-leave-to {
+    transform: translateX(100px);
+    opacity: 0;
+}

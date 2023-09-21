@@ -2,8 +2,13 @@
     --home-vertical-padding: 50px;
     --home-content-gap: 30px;
 
-    --primary-color: rgb(65, 75, 178);
-    --secondary-color: rgb(149,16,172);
+    --primary-color: #0BA4DB;
+    --secondary-color: #FF4006;
+
+    --color-palette-1: #046A8F;
+    --color-palette-2: #FF4006;
+    --color-palette-3: #26C5FF;
+    --color-palette-4: #0BA4DB;
 }
 body{
     padding: 0;
@@ -28,11 +33,16 @@ button{
 /* HOME */
 .home-banner{
     min-height: 250px;
-    background: var(--primary-color);
+    background: var(--color-palette-4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     place-items: center;
+}
+
+.section-trimmer{
+    height: 20px;
+    background: var(--color-palette-3);
 }
 
 .container{

@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 button.godfather {
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1);
 }
 
 

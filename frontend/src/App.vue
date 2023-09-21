@@ -4,5 +4,6 @@
 
 <style>
 @import "@/styles/fonts.style.css";
+@import "@/styles/transitions.style.css";
 @import "@/styles/main.style.css";
 </style>

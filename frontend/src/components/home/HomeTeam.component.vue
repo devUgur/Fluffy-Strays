@@ -13,6 +13,7 @@
         </div>
       </div>
     </div>
+    <div class="section-trimmer"></div>
   </div>
 </template>
 

@@ -5,8 +5,11 @@
       <img src="@/assets/flaticons/quote-white.png">
     </div>
     -->
-    <div v-for="text in texts">
-      <p>{{text}}</p>
+    <div v-for="(text, index) in texts">
+      <p :class="{'title': index === 0 }">{{text}}</p>
+    </div>
+    <div v-if="texts.length === 1">
+      <p class="">Hilf uns zu Helfen</p>
     </div>
   </div>
 </template>
@@ -28,13 +31,16 @@ export default {
 }
 
 p{
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
   color: white;
   font-size: 22px;
   font-weight: bold;
 }
 
+.title{
+  font-size: 32px;
+}
 img{
   height: 48px;
 }
