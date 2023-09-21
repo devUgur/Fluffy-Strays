@@ -86,13 +86,16 @@ p{
   font-weight: bold;
 }
 
-p span {
+p > span {
   position: relative;
   color: black;
+  padding: 0 3px;
+  width: calc(100% - 6px)!important;
+  white-space: pre;
 }
 
 .text{
-  max-width: 700px;
+  max-width: 800px;
   margin: 40px auto;
 }
 
@@ -107,16 +110,12 @@ img{
   top: 0;
   bottom: 0;
   width: 0%;
-  transition: width 3s;
+  transition: width ease 2s;
   background-color: var(--color-palette-3);
   z-index: -1;
 
 }
 
-.home-banner{
-  min-height: 35px !important;
-  background-color: var(--color-palette-3);
-}
 
 @media (max-width: 768px) {
   p{
