@@ -133,7 +133,7 @@ export default {
   width: calc(100% - 40px);
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   transition: box-shadow 0.5s;
-  padding: 30px 20px;
+  padding: 20px;
 }
 
 .card-panel:hover{
@@ -145,7 +145,7 @@ export default {
 }
 
 .slide .item{
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .profile{
