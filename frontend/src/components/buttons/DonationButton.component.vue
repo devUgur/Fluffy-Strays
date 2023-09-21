@@ -1,12 +1,12 @@
 <template>
   <div id="donation-button-component">
-    <button class="donate" @mouseenter="startPulse" @mouseleave="stopPulse">
+    <button class="donate" @mouseenter="startSlide" @mouseleave="startSlide">
       <span>Jetzt spenden</span>
       <img
-          ref="heartImage"
-          src="@/assets/flaticons/heart-white.png"
+          ref="arrowImage"
+          src="@/assets/flaticons/right-arrow-white.png"
           alt=""
-          class="heart"
+          class="arrow slide"
       >
     </button>
   </div>
@@ -16,11 +16,21 @@
 export default {
   name: "DonationButtonComponent",
   methods: {
-    startPulse() {
-      this.$refs.heartImage.classList.add("pulse");
+    startSlide() {
+      this.isSliding = true;
+      this.$refs.arrowImage.style.transition = "transform 1s cubic-bezier(0.2, 1, 0.2, 1)";
+      this.$refs.arrowImage.style.transform = "translateX(50%)";
+      setTimeout(() => {
+        this.$refs.arrowImage.style.transition = "transform 0.5s cubic-bezier(0.2, 1, 0.2, 1)";
+        this.$refs.arrowImage.style.transform = "translateX(0)";
+      }, 1000);
     },
-    stopPulse() {
-      this.$refs.heartImage.classList.remove("pulse");
+    stopSlide() {
+      if (this.isSliding) {
+        this.$refs.arrowImage.style.transition = "";
+        this.$refs.arrowImage.style.transform = "translateX(0)";
+        this.isSliding = false;
+      }
     },
   },
 };
@@ -31,21 +41,16 @@ button.donate {
   background-color: var(--secondary-color);
 }
 
-.heart {
-  transition: transform 0.2s ease-in-out;
-}
-
-.pulse {
-  animation: pulse 0.7s infinite;
+.slide {
+  animation: slide 1s infinite;
   transform-origin: center;
 }
-
-@keyframes pulse {
+@keyframes slide {
   0% {
-    transform: scale(1);
+    transform: translateX(0%);
   }
   50% {
-    transform: scale(1.2);
+    transform: translateX(50%);
   }
   100% {
     transform: scale(1);

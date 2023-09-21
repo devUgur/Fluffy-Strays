@@ -1,12 +1,13 @@
 <template>
   <div id="godfather-button-component">
-    <button class="godfather" @mouseenter="startSlide" @mouseleave="stopSlide">
+    <button class="godfather">
       <span>Pate werden</span>
+
       <img
-          ref="arrowImage"
-          src="@/assets/flaticons/right-arrow-white.png"
+          ref="heartImage"
+          src="@/assets/flaticons/heart-white.png"
           alt=""
-          class="arrow"
+          class="heart"
       >
     </button>
   </div>
@@ -21,23 +22,16 @@ export default {
     };
   },
   methods: {
-    startSlide() {
-      this.isSliding = true;
-      this.$refs.arrowImage.style.transition = "transform 0.7s cubic-bezier(0.2, 1, 0.3, 1)";
-      this.$refs.arrowImage.style.transform = "translateX(100%)";
-      setTimeout(() => {
-        this.$refs.arrowImage.style.transition = "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)";
-        this.$refs.arrowImage.style.transform = "translateX(0)";
-      }, 700);
+    startPulse() {
+      this.$refs.heartImage.classList.add("pulse");
     },
-    stopSlide() {
-      if (this.isSliding) {
-        this.$refs.arrowImage.style.transition = "";
-        this.$refs.arrowImage.style.transform = "translateX(0)";
-        this.isSliding = false;
-      }
+    stopPulse() {
+      this.$refs.heartImage.classList.remove("pulse");
     },
   },
+  mounted() {
+    this.startPulse();
+  }
 };
 </script>
 
@@ -47,8 +41,26 @@ button.godfather {
   overflow: hidden;
 }
 
-.arrow {
-  transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+
+
+.heart {
+  transition: transform 0.2s ease-in-out;
 }
 
+.pulse {
+  animation: pulse 1s infinite;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 </style>

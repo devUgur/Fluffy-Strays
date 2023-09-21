@@ -35,6 +35,10 @@ button{
     place-items: center;
 }
 
+.container{
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
 /* TOPNAV donation buttons */
 #topnav-donation-component button{
     max-width: 220px;

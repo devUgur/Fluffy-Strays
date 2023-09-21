@@ -1,8 +1,9 @@
 <template>
   <div id="one-blog-view">
-    <TitleComponent :title="'Fluffy Strays Blog'"></TitleComponent>
+
 
     <div class="container">
+      <TitleComponent :title="'Fluffy Strays Blog'"></TitleComponent>
       <div class="content" v-if="_blog">
         <div class="image">
           <img :src="require('@/assets/canva/blog/' + _blog.filename)" alt="">
@@ -100,7 +101,7 @@ export default {
   gap: 30px;
   margin: 0 auto;
   max-width: 1200px;
-  padding: var(--home-vertical-padding) 30px;
+  padding: 100px 30px;
 }
 
 .content{
@@ -109,8 +110,8 @@ export default {
   gap: 30px;
 }
 
-.content:nth-child(2){
-  flex-wrap: wrap-reverse;
+.content:nth-child(2n) {
+  flex-wrap: wrap-reverse !important; /* Nur das zweite .content-Element wird umgekehrt */
 }
 
 .image{
@@ -145,7 +146,7 @@ img{
 }
 
 .content:nth-child(2) .text{
-  text-align: right;
+
 }
 
 .text .top h3{
