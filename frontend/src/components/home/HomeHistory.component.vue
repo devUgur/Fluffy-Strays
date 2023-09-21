@@ -109,7 +109,7 @@ p.reference{
   align-self: flex-start;
   width: auto;
   padding: 10px 20px;
-  background-color: orange;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;

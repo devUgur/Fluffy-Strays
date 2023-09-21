@@ -1,6 +1,6 @@
 <template>
   <div id="godfather-button-component">
-    <button class="godfather">
+    <button title="coming soon..." class="godfather">
       <span>Pate werden</span>
 
       <img
@@ -38,7 +38,6 @@ export default {
 <style scoped>
 button.godfather {
   background-color: var(--primary-color);
-  overflow: hidden;
 }
 
 

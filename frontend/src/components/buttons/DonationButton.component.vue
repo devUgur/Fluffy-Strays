@@ -1,6 +1,6 @@
 <template>
   <div id="donation-button-component">
-    <button class="donate" @mouseenter="startSlide" @mouseleave="startSlide">
+    <button title="coming soon..." class="donate" @mouseenter="startSlide" @mouseleave="startSlide">
       <span>Jetzt spenden</span>
       <img
           ref="arrowImage"

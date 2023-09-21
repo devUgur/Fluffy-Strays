@@ -48,9 +48,9 @@
       </div>
       <div class="content bottom">
         <button title="comming soon..."> Affiliate Partnerprogramm </button>
-        <button title="comming soon...">> Dir gefällt die Webseite und du möchtest auch so eine ? </button>
-        <button title="comming soon...">> Impressum </button>
-        <button title="comming soon...">> Datenschutz </button>
+        <button title="comming soon..."> Dir gefällt die Webseite und du möchtest auch so eine ? </button>
+        <button title="comming soon..."> Impressum </button>
+        <button title="comming soon..."> Datenschutz </button>
       </div>
     </div>
   </div>

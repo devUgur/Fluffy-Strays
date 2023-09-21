@@ -133,7 +133,7 @@ export default {
   width: calc(100% - 40px);
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   transition: box-shadow 0.5s;
-  padding: 20px;
+  padding: 30px;
 }
 
 .card-panel:hover{
@@ -141,7 +141,10 @@ export default {
 }
 
 .slide{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .slide .item{
@@ -155,7 +158,7 @@ export default {
 }
 .profile img{
   height: 82px;
-  background-color: orange;
+  background-color: var(--primary-color);
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -173,5 +176,9 @@ export default {
   width: 8px !important;
   border: 2px solid white;
   padding: 2px;
+}
+
+.flicking-pagination-bullet-active{
+  background-color: var(--primary-color);
 }
 </style>
