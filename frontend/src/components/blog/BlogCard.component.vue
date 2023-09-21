@@ -15,7 +15,10 @@
       <div class="visit">
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
-            <router-link :to="'/blog/'+blog._id" target="_blank">jetzt weiterlesen</router-link>
+            <router-link :to="'/blog/'+blog._id" target="_blank">
+              <div>jetzt weiterlesen</div>
+              <img src="@/assets/flaticons/arrow-right-thin-colored.png">
+            </router-link>
           </div>
         </transition>
       </div>
@@ -83,7 +86,22 @@ p.title{
 
 
 .blog-route{
+  text-align: center;
   transition: all 0.3s ease-out;
+}
+
+
+.blog-route a{
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+}
+
+
+.blog-route a img{
+  height: 10px;
+  margin-left: 5px;
 }
 
 

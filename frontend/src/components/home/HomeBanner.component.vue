@@ -5,14 +5,16 @@
       <img src="@/assets/flaticons/quote-white.png">
     </div>
     -->
-    <p>{{ text }}</p>
+    <div v-for="text in texts">
+      <p>{{text}}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "HomeBannerComponent",
-  props: ['text']
+  props: ['texts']
 }
 </script>
 
@@ -21,7 +23,7 @@ export default {
   display: flex;
   flex-direction: column;
   place-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 30px;
 }
 

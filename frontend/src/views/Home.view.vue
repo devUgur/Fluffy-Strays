@@ -4,10 +4,10 @@
     <HomeAboutComponent></HomeAboutComponent>
     <HomeFluffysComponent></HomeFluffysComponent>
     <HomeBlogComponent></HomeBlogComponent>
-    <HomeBannerComponent :text="'Die größte Ehre, die man einem Menschen antun kann, ist die, dass man zu ihm Vertrauen hat. - Matthias Claudius'"></HomeBannerComponent>
+    <HomeBannerComponent :texts="bannerTexts[0]"></HomeBannerComponent>
     <HomeFeedbackComponent></HomeFeedbackComponent>
     <HomeHistoryComponent></HomeHistoryComponent>
-    <HomeBannerComponent :text="'Wir können zusammen ein Lichtblick in dieser dunklen Zeit sein, wenn wir gemeinsam ein Zeichen gegen das Elend setzen.'"></HomeBannerComponent>
+    <HomeBannerComponent :texts="bannerTexts[1]"></HomeBannerComponent>
     <HomeTeamComponent></HomeTeamComponent>
     <HomeOurSuccessComponent></HomeOurSuccessComponent>
   </div>
@@ -35,6 +35,14 @@ export default {
     HomeHistoryComponent,
     HomeTeamComponent,
     HomeOurSuccessComponent
+  },
+  data(){
+    return {
+      bannerTexts: [
+        [ 'Die größte Ehre, die man einem Menschen antun kann, ist die, dass man zu ihm Vertrauen hat.', 'Matthias Claudius'],
+        [ 'Wir können zusammen ein Lichtblick in dieser dunklen Zeit sein, wenn wir gemeinsam ein Zeichen gegen das Elend setzen.']
+      ]
+    }
   }
 
 }

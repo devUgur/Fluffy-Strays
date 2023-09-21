@@ -24,7 +24,6 @@ p.slogan{
   flex-direction: column;
   place-items: center;
   justify-content: center;
-  gap: 10px;
   margin: 0 auto;
   font-weight: bold;
   font-size: 20px;
@@ -32,6 +31,7 @@ p.slogan{
 }
 
 img{
+  margin: 15px;
   height: 18px;
 }
 </style>

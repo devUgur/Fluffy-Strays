@@ -33,6 +33,6 @@ export default {
   justify-content: center;
   gap: 50px;
   max-width: 1260px;
-
+  padding-bottom: 100px;
 }
 </style>

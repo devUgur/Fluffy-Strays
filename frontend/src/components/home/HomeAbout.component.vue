@@ -6,6 +6,7 @@
       <p class="text"> Mit deiner Unterstützung können wir gemeinsam wahre Wunder bewirken. Tauche ein in unsere Projekte, spüre die Geschichten und werde ein Teil unserer Fluffy Strays Familie, die für das Wohl der Straßentiere kämpft. </p>
       <p class="text"> Dein Beitrag bedeutet nicht nur Leben, sondern auch Liebe und Geborgenheit. Gemeinsam schaffen wir eine Welt, in der die flauschigen Streuner ein glückliches und gesundes Leben genießen können. </p>
     </div>
+    <div class="home-banner"></div>
   </div>
 </template>
 
@@ -34,6 +35,10 @@ p{
 
 img{
   height: 18px;
+}
+
+.home-banner{
+  min-height: 50px !important;
 }
 
 @media (max-width: 768px) {
