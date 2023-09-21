@@ -1,6 +1,6 @@
 <template>
   <div id="about-text-component">
-    <div class="container">
+    <div class="container" ref="container">
       <p class="text">
         Hier schlagen <span><span class="mark"></span> unsere Herzen im Einklang mit den Straßentieren,</span>
         <br> die unsere Hilfe so dringend benötigen.
@@ -37,21 +37,24 @@ export default {
   methods: {
     handleIntersection(entries) {
       entries.forEach((entry) => {
-        // Überprüfe, ob das Element im Viewport ist.
+        // Überprüfe, ob der Container im Viewport ist.
         if (entry.isIntersecting) {
-          // Finde das zugehörige Element in der Beobachtungsliste.
-          const animatedElement = this.animatedElements.find(
-              (item) => item.element === entry.target
-          );
+          // Finde den Container-Element-Referenz.
+          const container = this.$refs.container;
 
-          if (animatedElement && !animatedElement.animated) {
+          // Finde alle markierten Elemente im Container.
+          const markElements = container.querySelectorAll(".mark");
+
+          // Durchlaufe die markierten Elemente und triggere die Animationen.
+          markElements.forEach((element, index) => {
             // Hier setzen Sie eine Verzögerung (in Millisekunden) für die Animation.
-            // Zum Beispiel: 500 Millisekunden (0,5 Sekunden) Verzögerung.
+            // Die Verzögerung basiert auf dem Index des Elements.
+            const delay = index * 1500; // 500 Millisekunden (0,5 Sekunden) Verzögerung pro Element.
+
             setTimeout(() => {
-              this.animateElement(entry.target);
-              animatedElement.animated = true;
-            }, 500); // Ändern Sie die Verzögerung nach Bedarf.
-          }
+              this.animateElement(element);
+            }, delay);
+          });
         }
       });
     },
@@ -65,12 +68,8 @@ export default {
       threshold: 0.2, // Ändere den Threshold-Wert nach Bedarf.
     });
 
-    // Finde alle markierten Elemente und füge sie zur Beobachtungsliste hinzu.
-    const markElements = document.querySelectorAll(".mark");
-    markElements.forEach((element) => {
-      this.observer.observe(element);
-      this.animatedElements.push({ element, animated: false });
-    });
+    // Rufe die Methode auf, um den Container zu beobachten.
+    this.observer.observe(this.$refs.container);
   },
 };
 </script>
@@ -108,7 +107,7 @@ img{
   top: 0;
   bottom: 0;
   width: 0%;
-  transition: width 0.7s;
+  transition: width 3s;
   background-color: var(--color-palette-3);
   z-index: -1;
 
