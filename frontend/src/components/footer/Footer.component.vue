@@ -34,7 +34,7 @@
         </div>
         <div class="item newsletter">
           <h2> Verpasse keine neuen Geschichten deiner Fluffy Strays mehr ...</h2>
-          <button>NEWSLETTER ABONNIEREN</button>
+          <button title="comming soon...">NEWSLETTER ABONNIEREN</button>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis excepturi ipsam perspiciatis
             provident quis similique. A ad debitis ducimus facere, fuga officiis quam totam voluptatum. Aliquid
             asperiores dolore dolorem error minima perferendis ratione rerum tenetur voluptate voluptatem. Accusantium
@@ -47,25 +47,18 @@
         </div>
       </div>
       <div class="content bottom">
-        <button> Affiliate Partnerprogramm </button>
-        <button> Dir gefällt die Webseite und du möchtest auch so eine ? </button>
-        <button> Impressum </button>
-        <button> Datenschutz </button>
+        <button title="comming soon..."> Affiliate Partnerprogramm </button>
+        <button title="comming soon...">> Dir gefällt die Webseite und du möchtest auch so eine ? </button>
+        <button title="comming soon...">> Impressum </button>
+        <button title="comming soon...">> Datenschutz </button>
       </div>
     </div>
-    <!--
-    <ContactFormularComponent></ContactFormularComponent>
-    -->
   </div>
 </template>
 
 <script>
-import ContactFormularComponent from "@/components/contact/ContactFormular.component.vue";
 export default {
   name: "FooterComponent",
-  components: {
-    ContactFormularComponent
-  }
 }
 </script>
 
