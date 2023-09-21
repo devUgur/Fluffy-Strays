@@ -82,15 +82,12 @@ export default {
   padding: 50px 30px;
 }
 p{
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
 }
 
 p > span {
   position: relative;
   color: black;
-  padding: 0 3px;
-  width: calc(100% - 6px)!important;
   white-space: pre;
 }
 
