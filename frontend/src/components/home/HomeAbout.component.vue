@@ -92,7 +92,7 @@ p > span {
 }
 
 .text{
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
 }
 
