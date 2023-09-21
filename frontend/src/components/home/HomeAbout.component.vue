@@ -82,7 +82,7 @@ export default {
   padding: 50px 30px;
 }
 p{
-  font-size: 24px;
+  font-size: 22px;
 }
 
 p > span {
@@ -92,7 +92,7 @@ p > span {
 }
 
 .text{
-  max-width: 900px;
+  max-width: 1100px;
   margin: 40px auto;
 }
 
@@ -109,6 +109,7 @@ img{
   width: 0%;
   transition: width ease 2s;
   background-color: var(--color-palette-3);
+  opacity: 0.5;
   z-index: -1;
 
 }
