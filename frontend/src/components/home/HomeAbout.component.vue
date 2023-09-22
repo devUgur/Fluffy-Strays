@@ -21,7 +21,6 @@
         <span><span class="mark"></span> Liebe und Geborgenheit. </span>
         Gemeinsam schaffen wir eine Welt, in der die flauschigen Streuner ein glückliches und gesundes Leben genießen können. </p>
     </div>
-    <div class="section-trimmer"></div>
   </div>
 </template>
 

@@ -2,6 +2,7 @@
   <div id="home-view">
     <HomeIntroComponent></HomeIntroComponent>
     <HomeAboutComponent></HomeAboutComponent>
+    <div class="section-trimmer"></div>
     <HomeFluffysComponent></HomeFluffysComponent>
     <HomeOurSuccessComponent></HomeOurSuccessComponent>
     <HomeBannerComponent :texts="bannerTexts[0]"></HomeBannerComponent>
