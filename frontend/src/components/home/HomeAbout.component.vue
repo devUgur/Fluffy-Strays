@@ -87,7 +87,7 @@ p{
 
 p > span {
   position: relative;
-  color: black;
+  color: var(--color-palette-1-D);
   white-space: pre;
 }
 

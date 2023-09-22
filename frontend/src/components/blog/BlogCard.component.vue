@@ -15,7 +15,7 @@
       <div class="item visit">
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
-            <router-link :to="'/blog/'+blog._id" target="_blank">
+            <router-link :to="'/blogs/'+blog._id" target="_blank">
               <div>jetzt weiterlesen</div>
               <img src="@/assets/flaticons/arrow-right-thin-colored.png">
             </router-link>
@@ -99,7 +99,7 @@ p.title{
   display: flex;
   place-items: center;
   justify-content: center;
-
+  color: var(--color-palette-1-D);
 }
 
 

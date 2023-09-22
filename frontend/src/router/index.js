@@ -17,9 +17,12 @@ const routes = [
     component:  MainLayout,
     children: [
       { name: "Home", path: "/", component: HomeView },
-      { name: "Blog", path: "/blog", component:  BlogView },
-      { name: "OneBlog", path: "/blog/:id", component:  OneBlogView },
-      { name: "Fluffy", path: "/fluffy/:id", component:  OneFluffyComponent },
+      { name: "Blog", path: "/blogs", component:  BlogView },
+      { name: "OneBlog", path: "/blogs/:id", component:  OneBlogView },
+      { name: "Fluffy", path: "/fluffys", component:  OneFluffyComponent },
+      { name: "OneFluffy", path: "/fluffys/:id", component:  OneFluffyComponent },
+      { name: "Supporters", path: '/supporters', component: OneBlogView },
+      { name: "Projects", path: '/projects', component: OneBlogView },
     ]
   },
 ]

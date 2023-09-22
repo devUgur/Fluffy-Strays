@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 button.donate {
-  background-color: var(--color-palette-2);
+  background-color: var(--color-palette-1-C);
 }
 
 .slide {

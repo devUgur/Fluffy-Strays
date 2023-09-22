@@ -16,7 +16,7 @@
                <p>{{slide.text}}</p>
              </div>
              <div class="item to">
-               <router-link to="">Helfen auch Sie um zu helfen</router-link>
+               <router-link to="">Sei auch du ein Teil der Familie</router-link>
              </div>
            </div>
           </div>
@@ -158,7 +158,7 @@ export default {
 }
 .profile img{
   height: 82px;
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1-D);
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -167,7 +167,9 @@ export default {
   bottom: 0;
 }
 
-
+.item.to a{
+  color: var(--color-palette-1-D);
+}
 </style>
 
 <style>
@@ -179,6 +181,6 @@ export default {
 }
 
 .flicking-pagination-bullet-active{
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1-D);
 }
 </style>

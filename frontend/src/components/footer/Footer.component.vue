@@ -68,7 +68,7 @@ export default {
   flex-direction: column;
   min-height: 400px;
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1-D);
   margin-top: 100px;
 }
 .image{

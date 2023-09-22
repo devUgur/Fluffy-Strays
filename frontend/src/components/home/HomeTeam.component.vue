@@ -13,7 +13,6 @@
         </div>
       </div>
     </div>
-    <div class="section-trimmer"></div>
   </div>
 </template>
 
@@ -67,7 +66,7 @@ export default {
   align-self: flex-start;
   width: auto;
   padding: 10px 20px;
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1-D);
   color: white;
   border: none;
   border-radius: 5px;

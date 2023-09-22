@@ -1,5 +1,5 @@
 <template>
-  <div id="">
+  <div id="topnav-links-component">
     <div class="navs">
       <nav v-show="!collapsed">
         <div class="link" v-for="(link, index) in links" :key="link.to">
@@ -21,10 +21,10 @@ export default {
     return{
       links: [
         { name: "Home", to: "/"},
-        { name: "Fluffys", to: "/"},
-        { name: "Blog", to: "/blog"},
-        { name: "unsere Helden", to: "/"},
-        { name: "neue Projekte", to: "/"},
+        { name: "Fluffys", to: "/fluffys"},
+        { name: "Blog", to: "/blogs"},
+        { name: "unsere Helden", to: "/supporters"},
+        { name: "neue Projekte", to: "/projects"},
       ],
     }
   },
@@ -46,7 +46,7 @@ nav {
 
 nav a {
   font-size: 18px;
-  color: #2c3e50;
+  color: var(--color-palette-1-D);
   text-decoration: none;
   display: flex;
   place-items: center;

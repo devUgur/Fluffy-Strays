@@ -6,10 +6,10 @@
     </div>
     -->
     <div v-for="(text, index) in texts">
-      <p :class="{'title': index === 0 }">{{text}}</p>
+      <p class="" :class="{'title': index === 0 }">{{text}}</p>
     </div>
     <div v-if="texts.length === 1">
-      <p class="">Hilf uns zu Helfen</p>
+      <p class="slogan">Hilf uns zu Helfen</p>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
 }
 
 p{
-  max-width: 700px;
+  max-width: 750px;
   text-align: center;
   color: white;
   font-size: 22px;

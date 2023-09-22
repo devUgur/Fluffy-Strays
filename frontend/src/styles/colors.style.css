@@ -1,0 +1,14 @@
+:root{
+    --color-palette-1-A: #993102;
+    --color-palette-1-B: #FF661F;
+    --color-palette-1-C: #E64B04;
+    --color-palette-1-D: #009989;
+    --color-palette-1-E: #05E6CE;
+}
+body{}
+.home-banner{
+    background: var(--color-palette-1-D);
+}
+.section-trimmer{
+    background: var(--color-palette-1-D);
+}

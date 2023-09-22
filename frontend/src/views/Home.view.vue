@@ -3,13 +3,14 @@
     <HomeIntroComponent></HomeIntroComponent>
     <HomeAboutComponent></HomeAboutComponent>
     <HomeFluffysComponent></HomeFluffysComponent>
-    <HomeBlogComponent></HomeBlogComponent>
+    <HomeOurSuccessComponent></HomeOurSuccessComponent>
     <HomeBannerComponent :texts="bannerTexts[0]"></HomeBannerComponent>
     <HomeFeedbackComponent></HomeFeedbackComponent>
     <HomeHistoryComponent></HomeHistoryComponent>
     <HomeBannerComponent :texts="bannerTexts[1]"></HomeBannerComponent>
+    <HomeBlogComponent></HomeBlogComponent>
+    <div class="section-trimmer"></div>
     <HomeTeamComponent></HomeTeamComponent>
-    <HomeOurSuccessComponent></HomeOurSuccessComponent>
   </div>
 </template>
 

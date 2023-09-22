@@ -15,7 +15,7 @@
 <script>
 // Components
 import TopnavComponent from "@/components/navs/Topnav.component.vue";
-import FooterComponent from "@/components/footer/Footer.component.vue";
+import FooterComponent from "@/components/footer/Footer2.component.vue";
 export default {
   name: "MainLayout",
   components: {

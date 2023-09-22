@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     toFluffy(id){
-      const url = '/fluffy/' + id;
+      const url = '/fluffys/' + id;
       window.open(url, '_blank');
     }
   }

@@ -85,7 +85,7 @@ export default {
   display: flex;
   place-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
+  background-color: var(--color-palette-1-D);
   padding: 50px 0;
 }
 
