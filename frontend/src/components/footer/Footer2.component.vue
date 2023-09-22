@@ -1,5 +1,10 @@
 <template>
   <div id="footer-component">
+    <div class="image">
+      <div class="img-layout">
+        <img src="@/assets/flaticons/img.png" alt="">
+      </div>
+    </div>
     <div class="footer-section links">
       <div class="left">
         <div class="content">
@@ -72,12 +77,34 @@ export default {
 
 <style scoped>
 #footer-component{
-
+  margin-top: 100px;
   background: var(--color-palette-1-D);
   padding: 50px 50px;
   width: calc(100% - 100px);
 }
+.image{
+  display: flex;
+  justify-content: center;
+}
 
+.image img{
+  height: 46px;
+  width: 46px;
+  object-fit: cover;
+}
+
+.img-layout{
+  margin-top: -145px;
+  width: 200px;
+  height: 200px;
+  background-color: #b7b7b7;
+  /*border: 5px solid grey;*/
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
 .footer-section{
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.51);
