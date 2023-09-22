@@ -1,7 +1,7 @@
 <template>
   <div id="home-team-component">
     <div class="container">
-
+      <TitleComponent :title="'das Fluffy Strays Team'" slogan="Dank euch können wir helfen"></TitleComponent>
       <div class="content team">
         <div class="text">
           <h2 class="title">Das Team stellt sich vor</h2>
@@ -17,8 +17,12 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/title/title.component.vue";
 export default {
-  name: ""
+  name: "HomeTeamComponent",
+  components: {
+    TitleComponent
+  }
 }
 </script>
 

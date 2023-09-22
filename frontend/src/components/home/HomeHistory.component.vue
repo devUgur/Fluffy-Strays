@@ -120,12 +120,4 @@ img.default{
   height: 22px;
   width: 22px;
 }
-
-
-.text.right{
-}
-
-.text.right button{
-  margin-left: auto;
-}
 </style>

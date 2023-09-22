@@ -9,7 +9,7 @@
       <p class="" :class="{'title': index === 0 }">{{text}}</p>
     </div>
     <div v-if="texts.length === 1">
-      <p class="slogan">Hilf uns zu Helfen</p>
+      <p class="slogan">Hilf uns zu helfen</p>
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@ export default {
   place-items: center;
   justify-content: space-evenly;
   padding: 30px;
+  border-bottom: 5px solid white;
 }
 
 p{

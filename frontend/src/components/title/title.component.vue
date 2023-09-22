@@ -1,10 +1,10 @@
 <template>
   <div id="title-component">
-    <h1> {{ title }}</h1>
-    <p class="slogan">
-      {{ slogan }}
-      <img src="@/assets/flaticons/heart2.png" alt="">
+    <h1 v-html="title"></h1>
+    <p class="slogan" v-html="slogan">
+
     </p>
+    <img src="@/assets/flaticons/heart2.png" alt="">
   </div>
 </template>
 <script>

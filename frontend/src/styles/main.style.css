@@ -37,6 +37,12 @@ button{
 
 .section-trimmer{
     height: 10px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+#home-component .section-trimmer:last-of-type{
+
 }
 
 .container{

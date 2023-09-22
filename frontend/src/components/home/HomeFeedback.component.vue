@@ -2,7 +2,7 @@
   <div id="home-feedback-component">
     <div class="container">
       <div class="title">
-        <TitleComponent :title="'Es ist mir eine Ehre unsere Helden zu präsentieren'"></TitleComponent>
+        <TitleComponent :title="'Es ist mir eine Ehre <br> unsere Helden zu präsentieren'"></TitleComponent>
         <!--<h1>Das sagen unsere Unterstützer</h1>-->
       </div>
       <div class="slides">
@@ -16,7 +16,7 @@
                <p>{{slide.text}}</p>
              </div>
              <div class="item to">
-               <router-link to="">Sei auch du ein Teil der Familie</router-link>
+               <router-link to="">Sei auch du dabei!</router-link>
              </div>
            </div>
           </div>
@@ -113,7 +113,7 @@ export default {
 
 .title {
   text-align: center;
-  max-width: 520px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
