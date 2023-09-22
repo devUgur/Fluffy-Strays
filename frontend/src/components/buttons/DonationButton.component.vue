@@ -1,12 +1,13 @@
 <template>
   <div id="donation-button-component">
-    <button title="coming soon..." class="donate" @mouseenter="startSlide" @mouseleave="startSlide">
+    <button title="coming soon..." class="donate" @mouseenter="startSlide" @mouseleave="stopSlide">
       <span>Jetzt spenden</span>
       <img
           ref="arrowImage"
           src="@/assets/flaticons/right-arrow-white.png"
           alt=""
-          class="arrow slide"
+          class="arrow"
+          :class="{'slide': isSliding}"
       >
     </button>
   </div>
@@ -15,22 +16,17 @@
 <script>
 export default {
   name: "DonationButtonComponent",
+  data(){
+    return {
+      isSliding: false,
+    }
+  },
   methods: {
     startSlide() {
       this.isSliding = true;
-      this.$refs.arrowImage.style.transition = "transform 1s cubic-bezier(0.2, 1, 0.2, 1)";
-      this.$refs.arrowImage.style.transform = "translateX(50%)";
-      setTimeout(() => {
-        this.$refs.arrowImage.style.transition = "transform 0.5s cubic-bezier(0.2, 1, 0.2, 1)";
-        this.$refs.arrowImage.style.transform = "translateX(0)";
-      }, 1000);
     },
     stopSlide() {
-      if (this.isSliding) {
-        this.$refs.arrowImage.style.transition = "";
-        this.$refs.arrowImage.style.transform = "translateX(0)";
-        this.isSliding = false;
-      }
+      this.isSliding = false;
     },
   },
 };
@@ -39,6 +35,7 @@ export default {
 <style scoped>
 button.donate {
   background-color: var(--color-palette-1-C);
+  font-weight: bold;
 }
 
 .slide {

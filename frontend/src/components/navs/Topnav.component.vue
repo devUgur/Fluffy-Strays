@@ -16,7 +16,7 @@
         <MenuButtonComponent v-show="!isCollapsed" class="menu-btn" :sticky="isSticky" :collapsed="isCollapsed"></MenuButtonComponent>
       </div>
 
-      <div class="donations" :class="{'collapsed': isCollapsed}">
+      <div class="donations" :class="{'collapsed': isCollapsed, 'sticky': !isSticky}">
         <TopnavDonationComponent></TopnavDonationComponent>
       </div>
     </div>
@@ -68,7 +68,11 @@ export default {
 };
 </script>
 
-
+<style>
+.donations.sticky button{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+</style>
 
 <style scoped>
 .topnav {
@@ -119,14 +123,15 @@ export default {
 .donations{
   position: absolute;
   right: 0;
-  bottom: -20px;
+  bottom: -25px;
   transition: all 0.5s;
 }
 
 .donations.collapsed{
-  position: absolute;
-  right: 0;
-  bottom: -50px;
+  bottom: -60px;
+}
+.donations.sticky{
+  bottom: -60px;
 }
 
 

@@ -3,7 +3,7 @@
     <div class="welcome-container" ref="target">
       <div class="logo">
         <h1>Fluffy Strays</h1>
-        <p class="slogan">Hilf uns zu Helfen</p>
+        <p class="slogan">Hilf uns zu helfen</p>
       </div>
 
       <transition :key="currentLanguage">

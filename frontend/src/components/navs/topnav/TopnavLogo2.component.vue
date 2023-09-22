@@ -4,7 +4,7 @@
       <img v-show="!sticky" src="@/assets/canva/logo01.png" alt="">
       <div class="logo-text" :class="{'collapsed-items': collapsed}">
         <h1 v-if="!collapsed">Fluffy Strays</h1>
-        <p class="slogan">Hilf uns zu Helfen</p>
+        <p class="slogan">Hilf uns zu helfen</p>
       </div>
     </div>
   </div>

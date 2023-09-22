@@ -45,13 +45,13 @@ export default {
 .list-item .image {
   position: relative;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 4px solid white;
   display: flex;
   place-items: center;
   justify-content: center;
-  padding: 5px;
+  height: calc(100% - 8px);
 }
-.list-item .image img{
+.list-item .image{
   transition: transform 0.5s ease-in-out;
 }
 .list-item .image .blur{
@@ -78,7 +78,7 @@ export default {
   text-decoration: underline;
 
 }
-.list-item:hover .image img{
+.list-item:hover .image{
   transform: scale(1.09);
 }
 

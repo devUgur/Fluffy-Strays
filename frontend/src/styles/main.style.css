@@ -90,7 +90,7 @@ p.slogan{
     backdrop-filter: blur(8px);
 }
 
-/* Stil für die Tooltips */
+/* Stil für die Tooltips
 button[title] {
     position: relative;
     cursor: pointer;
@@ -117,3 +117,5 @@ button[title]:hover::after {
     visibility: visible;
     opacity: 1;
 }
+
+ */
