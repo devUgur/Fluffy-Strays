@@ -37,7 +37,8 @@ button.donate {
   background-color: var(--color-palette-1-C);
   font-weight: bold;
 }
-
+.arrow{
+}
 .slide {
   animation: slide 1s infinite;
   transform-origin: center;

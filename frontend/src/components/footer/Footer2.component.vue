@@ -62,7 +62,7 @@
         <router-link to="">Datenschutz</router-link>
       </div>
       <div class="legal-link-item">
-        <router-link to="">Cookie- Einstellung</router-link>
+        <router-link to="">Cookie-Einstellung</router-link>
       </div>
     </div>
   </div>
@@ -106,9 +106,8 @@ export default {
   justify-content: center;
 }
 .footer-section{
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.51);
-  padding: 30px 0;
+  padding: 30px;
 }
 .footer-section:last-of-type{
   border-bottom: none;
