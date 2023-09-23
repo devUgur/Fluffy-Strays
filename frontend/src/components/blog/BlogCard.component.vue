@@ -16,8 +16,8 @@
         <transition name="slide-fade">
           <div class="blog-route" v-show="onHover">
             <router-link :to="'/blogs/'+blog._id" target="_blank">
-              <div>jetzt weiterlesen</div>
-              <img src="@/assets/flaticons/arrow-right-thin-colored.png">
+              <div>weiterlesen</div>
+              <img src="@/assets/flaticons/next-color-1-A.png">
             </router-link>
           </div>
         </transition>
@@ -99,15 +99,24 @@ p.title{
   display: flex;
   place-items: center;
   justify-content: center;
+  text-decoration: none;
   color: var(--color-palette-1-D);
 }
+.blog-route a:hover{
+  text-decoration: underline;
+}
+
+
 
 
 .blog-route a img{
-  height: 10px;
+  height: 16px;
   margin-left: 5px;
+  transition: all 0.5s;
 }
-
+.blog-route a:hover img{
+  margin-left: 10px;
+}
 
 .slide-fade-enter-active {
   /*transition: all 0.3s ease-out;*/

@@ -79,6 +79,7 @@ export default {
 img {
   border-radius: 50%;
   transition: all 0.5s;
+  height: 52px;
   box-shadow: var(--box-shadow-palette-1-A);
   background-color: rgb(240, 240, 240);
 }

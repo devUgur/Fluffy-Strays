@@ -5,7 +5,7 @@
         <div class="link" v-for="(link, index) in links" :key="link.to">
           <router-link :to="link.to">
             <div>{{link.name}}</div>
-            <img src="@/assets/flaticons/pet.png" alt="">
+            <img src="@/assets/flaticons/pet-color-1-A.png" alt="">
           </router-link>
         </div>
       </nav>
@@ -47,8 +47,12 @@ nav a {
   justify-content: center;
 }
 
+nav a :hover{
+  /*color: var(--color-palette-1-A);*/
+}
+
 nav a.router-link-exact-active {
-  color: rgba(29, 29, 30, 0.79);
+  color: var(--color-palette-1-A);
 }
 
 nav a:hover img{
@@ -60,6 +64,7 @@ nav a img{
   transition: opacity 0.7s;
   position: absolute;
   height: 42px;
+  z-index: -1;
 }
 
 @media (max-width: 1024px) {

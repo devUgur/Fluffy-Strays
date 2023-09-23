@@ -7,7 +7,7 @@
            @mouseleave="icon.hovered = false">
         <transition name="bounce" mode="out-in">
           <img v-if="!icon.hovered" :src="require(`@/assets/flaticons/social/${icon.primary}.png`)" alt="">
-          <img v-else :src="require(`@/assets/flaticons/social/${icon.color}.png`)" alt="">
+          <img :title="icon.name" v-else :src="require(`@/assets/flaticons/social/${icon.color}.png`)" alt="">
         </transition>
       </div>
     </div>
@@ -29,26 +29,31 @@ export default {
       socialIcons: [
         {
           hovered: false,
+          name: "Youtube",
           primary: "youtube-primary",
           color: "youtube-color-1-A"
         },
         {
           hovered: false,
+          name: "Instagram",
           primary: "instagram-primary",
           color: "instagram-color-1-A"
         },
         {
           hovered: false,
+          name: "Pinterest",
           primary: "pinterest-primary",
           color: "pinterest-color-1-A"
         },
         {
           hovered: false,
+          name: "Facebook",
           primary: "facebook-primary",
           color: "facebook-color-1-A"
         },
         {
           hovered: false,
+          name: "TikTok",
           primary: "tiktok-primary",
           color: "tiktok-color-1-A"
         },
