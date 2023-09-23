@@ -1,9 +1,9 @@
 <template>
-  <div id="scroll-to-top-button" @mouseenter="hovered = true" @mouseleave="hovered = false">
+  <div id="scroll-to-top-button" @click="scrollToTop" @mouseenter="hovered = true" @mouseleave="hovered = false">
     <!-- Fügen Sie die <transition> Komponente hinzu -->
     <transition name="fade" mode="out-in">
       <div v-show="hovered" class="tooltip" key="tooltip">
-        <div class="text" :class="{'active':hovered}">Nach oben scrollen</div>
+        <div ref="text" class="text" :class="{'active':hovered}">Nach oben scrollen</div>
       </div>
     </transition>
     <img src="@/assets/flaticons/top.png" alt="">
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import SmoothScroll from "smooth-scroll";
+import scrollSmooth from "scroll-smooth";
+import smoothscroll from 'smoothscroll-polyfill';
 export default {
   name: "ScrollToTopButtonComponent",
   data() {
@@ -18,10 +21,40 @@ export default {
       hovered: false,
     };
   },
+  methods: {
+    scrollToTop(){
+      this.hovered = false;
+      // pure version
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      /*
+      // smooth-scroll version
+      let scroll = new SmoothScroll();
+      let anchor = document.querySelector('body');
+      let toggle = document.querySelector('#scroll-to-top-button');
+      let options = { speed: 400, easing: 'easeOutCubic' };
+      scroll.animateScroll(anchor, toggle, options);
+       */
+
+      /*
+      // scroll-smooth version
+      scrollSmooth.to(document.querySelector('body'), {
+        duration: 1500,
+        //offset: 100,
+        callback: elem => console.log(`Yup! Hi ${elem}!`),
+      })
+       */
+    }
+  },
+  mounted() {
+    // kick off the polyfill!
+    smoothscroll.polyfill();
+  }
 };
 </script>
 
 <style scoped>
+
 #scroll-to-top-button {
   position: fixed;
   bottom: 30px;
@@ -29,6 +62,7 @@ export default {
   z-index: 10;
   display: flex;
   place-items: center;
+
 }
 
 img {
