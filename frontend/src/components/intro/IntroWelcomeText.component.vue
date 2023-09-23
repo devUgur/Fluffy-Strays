@@ -29,13 +29,15 @@ export default {
   },
   data() {
     return {
+      // Save the timeline to an instance variable for later use
+      animationTimeline: null,
       show: false,
       currentLanguage: 'de', // Standardmäßig Deutsch
       currentIndex: 0,
       multiLangWelcomeText: [
-        'Herzlich Willkommen auf unserer Webseite.',
-        'Web sitemize hoş geldiniz.',
-        'Welcome to our website.',
+        'Es ist eine Freude, dich hier zu haben.',
+        'Seni burada gördüğümüze sevindik.',
+        "It's a pleasure to have you here.",
       ],
     };
   },
@@ -103,17 +105,30 @@ export default {
             }
           }
       );
+      // Save the timeline to an instance variable for later use
+      this.animationTimeline = tl;
     },
   },
   mounted() {
+    this.$store.dispatch('language/select', null);
     gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
     gsap.registerPlugin(ScrollTrigger);
+    setTimeout(() => {
+      this.$store.dispatch('language/select', { short: "DE", name: "German" });
+    }, 20);
   },
   watch: {
     currentWelcomeText(newVal) {
       this.animate();
     },
   },
+  beforeUnmount() {
+    // Ensure that any ongoing animations are stopped when the component is unmounted
+    if (this.animationTimeline) {
+      this.animationTimeline.kill(); // Kill the animation timeline
+      console.log("kill it")
+    }
+  }
 };
 </script>
 

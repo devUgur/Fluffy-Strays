@@ -1,22 +1,21 @@
 <template>
   <div class="dummy"></div>
-  <div class="topnav" :class="{'sticky': isSticky, 'collapsed': isCollapsed}">
+  <div class="topnav" :class="{'sticky': sticky, 'collapsed': collapsed}">
     <div class="layout">
       <div class="logo-content">
         <!-- <TopnavLogoComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogoComponent> -->
-        <TopnavLogo2Component :sticky="isSticky" :collapsed="isCollapsed"></TopnavLogo2Component>
+        <TopnavLogo2Component :sticky="sticky" :collapsed="collapsed"></TopnavLogo2Component>
       </div>
       <div class="links-content">
-        <TopnavLinksComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavLinksComponent>
+        <TopnavLinksComponent :sticky="sticky" :collapsed="collapsed"></TopnavLinksComponent>
       </div>
 
       <div class="options-content">
-        <TopnavSocialMediaComponent :sticky="isSticky" :collapsed="isCollapsed"></TopnavSocialMediaComponent>
-        <LanguageSelectorComponent v-if="!isSticky"></LanguageSelectorComponent>
-        <MenuButtonComponent v-show="!isCollapsed" class="menu-btn" :sticky="isSticky" :collapsed="isCollapsed"></MenuButtonComponent>
+        <TopnavSocialMediaComponent :sticky="sticky" :collapsed="collapsed"></TopnavSocialMediaComponent>
+        <!-- <LanguageSelectorComponent v-if="!sticky"></LanguageSelectorComponent> -->
+        <MenuButtonComponent v-show="!collapsed" class="menu-btn" :sticky="sticky" :collapsed="collapsed"></MenuButtonComponent>
       </div>
-
-      <div class="donations" :class="{'collapsed': isCollapsed, 'sticky': !isSticky}">
+      <div class="donations" :class="{'collapsed': collapsed, 'sticky': !sticky}">
         <TopnavDonationComponent></TopnavDonationComponent>
       </div>
     </div>
@@ -42,28 +41,20 @@ export default {
     TopnavSocialMediaComponent,
     MenuButtonComponent
   },
-  data() {
-    return {
-      isSticky: false,
-      isCollapsed: false,
-      windowScrollY: 0,
-    };
-  },
-
-  methods: {
-    handleScroll() {
-      const currentScrollY = window.scrollY;
-      this.isSticky = currentScrollY > 100;
-      this.isCollapsed = (window.scrollY > this.windowScrollY) && window.scrollY > 0;
-      this.windowScrollY = currentScrollY;
+  computed: {
+    sticky(){
+      return this.$store.getters['topnav/sticky'];
+    },
+    collapsed(){
+      return this.$store.getters['topnav/collapsed'];
     },
   },
   mounted() {
-    this.handleScroll(); // Initial call to set the initial state
-    window.addEventListener("scroll", this.handleScroll);
+    this.$store.dispatch('topnav/initScrollHandler');
+
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+    this.$store.dispatch('topnav/destroyScrollHandler');
   },
 };
 </script>

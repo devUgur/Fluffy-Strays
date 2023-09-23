@@ -17,17 +17,11 @@
 export default {
   props: ['sticky', 'collapsed'],
   name: "TopnavLinksComponent",
-  data(){
-    return{
-      links: [
-        { name: "Home", to: "/"},
-        { name: "Fluffys", to: "/fluffys"},
-        { name: "Blog", to: "/blogs"},
-        { name: "unsere Helden", to: "/supporters"},
-        { name: "neue Projekte", to: "/projects"},
-      ],
+  computed: {
+    links(){
+      return this.$store.getters['topnav/links'];
     }
-  },
+  }
 }
 </script>
 

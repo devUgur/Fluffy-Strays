@@ -1,5 +1,5 @@
 <template>
-  <div id="scroll-to-top-button" @click="scrollToTop" @mouseenter="hovered = true" @mouseleave="hovered = false">
+  <div id="scroll-to-top-button" :class="{'active': topnavSticky }" @click="scrollToTop" @mouseenter="hovered = true" @mouseleave="hovered = false">
     <!-- Fügen Sie die <transition> Komponente hinzu -->
     <transition name="fade" mode="out-in">
       <div v-show="hovered" class="tooltip" key="tooltip">
@@ -16,6 +16,11 @@ import scrollSmooth from "scroll-smooth";
 import smoothscroll from 'smoothscroll-polyfill';
 export default {
   name: "ScrollToTopButtonComponent",
+  computed: {
+    topnavSticky(){
+      return this.$store.getters['topnav/sticky'];
+    }
+  },
   data() {
     return {
       hovered: false,
@@ -57,12 +62,18 @@ export default {
 
 #scroll-to-top-button {
   position: fixed;
-  bottom: 30px;
+  bottom: -80px;
   right: 30px;
   z-index: 10;
   display: flex;
   place-items: center;
+  transition: all 0.7s;
+  opacity: 0;
+}
 
+#scroll-to-top-button.active{
+  bottom: 30px;
+  opacity: 1;
 }
 
 img {
