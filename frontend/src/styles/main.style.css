@@ -5,6 +5,7 @@
     --primary-color: #0BA4DB;
     --secondary-color: #FF4006;
 
+    --box-shadow-palette-1-A: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 body{
     padding: 0;

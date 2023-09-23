@@ -9,6 +9,7 @@
       </router-view>
     </div>
     <FooterComponent></FooterComponent>
+    <ScrollToTopButtonComponent></ScrollToTopButtonComponent>
   </div>
 </template>
 
@@ -16,11 +17,13 @@
 // Components
 import TopnavComponent from "@/components/navs/Topnav.component.vue";
 import FooterComponent from "@/components/footer/Footer2.component.vue";
+import ScrollToTopButtonComponent from "@/components/buttons/ScrollToTopButton.component.vue";
 export default {
   name: "MainLayout",
   components: {
     TopnavComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollToTopButtonComponent
   }
 }
 </script>
