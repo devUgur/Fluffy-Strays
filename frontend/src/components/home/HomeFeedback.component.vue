@@ -117,6 +117,10 @@ export default {
   margin: 0 auto;
 }
 
+.title:last-of-type{
+  margin: 50px auto;
+}
+
 .slides{
   max-width: 1200px;
   margin: 0 auto;

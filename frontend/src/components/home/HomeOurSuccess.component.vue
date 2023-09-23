@@ -58,10 +58,9 @@ export default {
 .list {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 50px;
 
 }
 
@@ -79,7 +78,8 @@ export default {
   justify-content: center;
   border-radius: 50%;
   width: 250px;
-  height: 250px;
+  height: 200px;
+  padding-bottom: 50px;
 }
 
 .count{

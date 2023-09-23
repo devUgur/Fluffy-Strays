@@ -2,24 +2,25 @@
   <div id="about-text-component">
     <div class="container" ref="container">
       <p class="text">
-        Hier schlagen <span><span class="mark"></span> unsere Herzen im Einklang mit den Straßentieren,</span>
-        <br> die unsere Hilfe so dringend benötigen.
+        Hier schlagen unsere Herzen im Einklang mit den<span class="mark"> Straßentiere</span>n,
+        <br> <span class="mark"> die unsere Hilfe so dringend benötigen</span>.
       </p>
       <p class="text">
-        <span><span class="mark"></span> Unser Ziel </span>  ist es, diesen unschuldigen Geschöpfen,
-        <span><span class="mark"></span> den Hunger zu nehmen, </span> deren
-        <span><span class="mark"></span> Schmerzen zu lindern </span> und ihnen
-        <span><span class="mark"></span> ein neues glücklicheres Leben zu schenken. </span>
+        <span class="mark">Unser Ziel </span>  ist es, diesen unschuldigen Geschöpfen,
+        <span class="mark">den Hunger zu nehmen</span>, deren
+        <span class="mark">Schmerzen zu lindern</span> und ihnen
+        <span class="mark">ein neues glücklicheres Leben zu schenken</span>.
       </p>
       <p class="text">
-        <span><span class="mark"></span> Mit deiner Unterstützung </span> können wir
-        <span><span class="mark"></span> gemeinsam wahre Wunder bewirken. </span> Tauche ein in unsere Projekte, spüre die Geschichten und
-        <span><span class="mark"></span> werde ein Teil unserer Fluffy Strays Familie, </span> die für das Wohl der Straßentiere kämpft. </p>
+        <span class="mark">Mit deiner Unterstützung </span> können wir
+        <span class="mark">gemeinsam wahre Wunder bewirken</span>. Tauche ein in unsere Projekte, spüre die Geschichten und
+        <span class="mark">werde ein Teil unserer Fluffy Strays Familie</span>, die für das Wohl der Straßentiere kämpft. </p>
       <p class="text">
-        <span><span class="mark"></span> Dein Beitrag bedeutet </span> nicht nur
-        <span><span class="mark"></span> Leben, </span> sondern auch
-        <span><span class="mark"></span> Liebe und Geborgenheit. </span>
-        Gemeinsam schaffen wir eine Welt, in der die flauschigen Streuner ein glückliches und gesundes Leben genießen können. </p>
+        <span class="mark">Dein Beitrag bedeutet </span> nicht nur
+        <span class="mark">Leben</span>, sondern auch
+        <span class="mark">Liebe und Geborgenheit</span>.
+        Gemeinsam schaffen wir eine Welt, in der die flauschigen Streuner ein glückliches und gesundes Leben genießen können.
+      </p>
     </div>
   </div>
 </template>
@@ -84,10 +85,15 @@ p{
   font-size: 22px;
 }
 
-p > span {
+.mark {
   position: relative;
   color: var(--color-palette-1-D);
   white-space: pre;
+}
+
+span{
+  padding: 0;
+  margin: 0;
 }
 
 .text{
@@ -98,20 +104,6 @@ p > span {
 
 img{
   height: 18px;
-}
-
-
-.mark {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0%;
-  transition: width ease 2s;
-  background-color: var(--color-palette-3);
-  opacity: 0.5;
-  z-index: -1;
-
 }
 
 

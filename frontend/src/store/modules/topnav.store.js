@@ -6,8 +6,8 @@ const state = {
         { name: "Home", to: "/"},
         { name: "Fluffys", to: "/fluffys"},
         { name: "Blog", to: "/blogs"},
-        { name: "unsere Helden", to: "/supporters"},
-        { name: "neue Projekte", to: "/projects"},
+        { name: "Unsere Helden", to: "/supporters"},
+        { name: "Neue Projekte", to: "/projects"},
     ],
 }
 
