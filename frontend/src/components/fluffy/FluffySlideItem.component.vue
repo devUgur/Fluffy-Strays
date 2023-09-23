@@ -4,11 +4,13 @@
          :key="fluffy.imgName"
          @click="toFluffy(fluffy._id)"
     >
-      <div class="image">
-        <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
-        <div class="blur" :class="{'active': entered}"></div>
-      </div>
-      <div class="name">{{fluffy.name}}</div>
+     <div class="content">
+       <div class="image">
+         <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
+         <div class="blur" :class="{'active': entered}"></div>
+       </div>
+       <div class="name">{{fluffy.name}}</div>
+     </div>
     </div>
   </div>
 </template>
@@ -34,12 +36,18 @@ export default {
 
 .list-item{
   width: 200px;
-
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   place-items: center;
   cursor: pointer;
+  height: 230px;
+}
+
+.list-item .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
 }
 
 .list-item .image {

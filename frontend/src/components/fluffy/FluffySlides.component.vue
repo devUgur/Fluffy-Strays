@@ -78,6 +78,10 @@ export default {
 };
 </script>
 
+<style>
+
+</style>
+
 <style scoped>
 @import "@egjs/flicking-plugins/dist/pagination.css";
 

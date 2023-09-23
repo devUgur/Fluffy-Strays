@@ -202,6 +202,10 @@ a {
   margin-top: 7px;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .social-links{
   display: flex;
 }
@@ -214,6 +218,7 @@ a {
 
 .legal-links{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .legal-links a{

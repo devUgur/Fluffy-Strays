@@ -35,7 +35,14 @@ export default {
 
 .layout{
   display: flex;
+  place-items: center;
   gap: 10px;
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 }
 
 img{
@@ -46,7 +53,6 @@ img{
 
 .item:hover{
   cursor: pointer;
-
 }
 
 .item:hover img{
