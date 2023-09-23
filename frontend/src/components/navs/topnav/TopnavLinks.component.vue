@@ -20,7 +20,7 @@ export default {
   computed: {
     links(){
       return this.$store.getters['topnav/links'];
-    }
+    },
   }
 }
 </script>

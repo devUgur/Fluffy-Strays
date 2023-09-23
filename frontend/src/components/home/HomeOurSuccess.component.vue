@@ -8,24 +8,24 @@
         <div class="list">
           <div class="list-row">
             <div class="list-item">
-              <img src="@/assets/flaticons/cat.png" alt="">
+              <img src="@/assets/flaticons/cat-color-1-A.png" alt="">
               <div class="count">34</div>
               <div class="name">Kastrationen durchgeführt</div>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/dog.png" alt="">
+              <img src="@/assets/flaticons/dog-color-1-A.png" alt="">
               <div class="count">35</div>
               <div class="name">übernommene Partnerschaften</div>
             </div>
           </div>
           <div class="list-row">
             <div class="list-item">
-              <img src="@/assets/flaticons/bird.png" alt="">
+              <img src="@/assets/flaticons/bird-color-1-A.png" alt="">
               <div class="count">19</div>
               <div class="name">Operationen durchgeführt</div>
             </div>
             <div class="list-item">
-              <img src="@/assets/flaticons/pet.png" alt="">
+              <img src="@/assets/flaticons/pet-color-1-A.png" alt="">
               <div class="count">22</div>
               <div class="name">gerettete Streuner</div>
             </div>

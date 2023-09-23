@@ -38,10 +38,10 @@
       </div>
     </div>
     <div class="footer-section social-links">
-      <div class="social-link-item">
+      <div class="social-link-item" @click="openYoutube">
         <img src="@/assets/flaticons/social/youtube-white.png" alt="">
       </div>
-      <div class="social-link-item">
+      <div class="social-link-item" @click="openInstagram">
         <img src="@/assets/flaticons/social/instagram-white.png" alt="">
       </div>
       <div class="social-link-item">
@@ -50,7 +50,7 @@
       <div class="social-link-item">
         <img src="@/assets/flaticons/social/facebook-white.png" alt="">
       </div>
-      <div class="social-link-item">
+      <div class="social-link-item" @click="openTiktok">
         <img src="@/assets/flaticons/social/tiktok-white.png" alt="">
       </div>
     </div>
@@ -71,7 +71,17 @@
 <script>
 export default {
   name: "FooterComponent",
-
+  methods: {
+    openYoutube(){
+      this.$store.dispatch('socialmedia/openYoutube');
+    },
+    openInstagram(){
+      this.$store.dispatch('socialmedia/openInstagram');
+    },
+    openTiktok(){
+      this.$store.dispatch('socialmedia/openTiktok');
+    },
+  }
 }
 </script>
 

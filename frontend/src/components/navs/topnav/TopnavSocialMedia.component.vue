@@ -4,7 +4,9 @@
       <div class="item"
            v-for="icon in socialIcons"
            @mouseenter="icon.hovered = true"
-           @mouseleave="icon.hovered = false">
+           @mouseleave="icon.hovered = false"
+           @click="icon.click"
+      >
         <transition name="bounce" mode="out-in">
           <img v-if="!icon.hovered" :src="require(`@/assets/flaticons/social/${icon.primary}.png`)" alt="">
           <img :title="icon.name" v-else :src="require(`@/assets/flaticons/social/${icon.color}.png`)" alt="">
@@ -31,31 +33,40 @@ export default {
           hovered: false,
           name: "Youtube",
           primary: "youtube-primary",
-          color: "youtube-color-1-A"
+          color: "youtube-color-1-A",
+          click: () => {
+            this.$store.dispatch('socialmedia/openYoutube');
+          }
         },
         {
           hovered: false,
           name: "Instagram",
           primary: "instagram-primary",
-          color: "instagram-color-1-A"
+          color: "instagram-color-1-A",
+          click: () => {
+            this.$store.dispatch('socialmedia/openInstagram');
+          }
         },
         {
           hovered: false,
           name: "Pinterest",
           primary: "pinterest-primary",
-          color: "pinterest-color-1-A"
+          color: "pinterest-color-1-A",
         },
         {
           hovered: false,
           name: "Facebook",
           primary: "facebook-primary",
-          color: "facebook-color-1-A"
+          color: "facebook-color-1-A",
         },
         {
           hovered: false,
           name: "TikTok",
           primary: "tiktok-primary",
-          color: "tiktok-color-1-A"
+          color: "tiktok-color-1-A",
+          click: () => {
+            this.$store.dispatch('socialmedia/openTiktok');
+          }
         },
       ]
     }
