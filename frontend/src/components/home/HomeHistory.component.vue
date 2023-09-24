@@ -117,6 +117,7 @@ p.reference{
   border-radius: 5px;
   cursor: pointer;
   box-shadow: var(--box-shadow-palette-1-A);
+  font-weight: bold;
 }
 
 img.default{

@@ -26,7 +26,7 @@ p.slogan{
   justify-content: center;
   margin: 0 auto;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   font-family: Indie, sans-serif;
 }
 
