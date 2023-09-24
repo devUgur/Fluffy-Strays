@@ -136,6 +136,8 @@ export default {
   max-width: 800px;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 0;
 }
 
 .footer-section.links .right{
@@ -152,7 +154,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  flex-wrap: wrap;
   place-items: center;
   text-align: center;
   border-radius: 25px;
@@ -172,7 +174,9 @@ export default {
 .newsletter .input{
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 
 }
 
@@ -200,11 +204,15 @@ export default {
 
   display: flex;
   flex-direction: column;
-  margin: 30px;
 }
 
 .footer-section.links .content {
   color: white;
+}
+
+.footer-section.links .content a, .footer-section.links .content h4 {
+  max-width: 80px;
+  width: 100%;
 }
 a {
   color: white;
@@ -238,5 +246,21 @@ a:hover {
 
 .legal-link-item{
   margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .links .content{
+    place-items: center;
+  }
+
+  .social-links{
+    justify-content: center;
+  }
+
+  .legal-links{
+    flex-direction: column;
+    place-items: center;
+    gap: 5px;
+  }
 }
 </style>

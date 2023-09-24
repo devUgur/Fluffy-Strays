@@ -42,6 +42,7 @@ img{
   height: 38px;
   border-radius: 50%;
   transition: all 0.3s;
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 
 .item:hover{
