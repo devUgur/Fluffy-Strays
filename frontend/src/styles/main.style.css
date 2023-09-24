@@ -35,11 +35,12 @@ button{
     flex-direction: column;
     justify-content: center;
     place-items: center;
+    border-bottom: 5px solid white;
+
 }
 
 .section-trimmer{
     height: 10px;
-    border-top: 5px solid white;
     border-bottom: 5px solid white;
 }
 

@@ -2,7 +2,7 @@
   <div id="home-our-success-component">
     <div class="container">
       <div class="title">
-        <TitleComponent :title="'Unsere bisherigen Erfolge'" :slogan="'dank unserer großzügigen Unterstützer'"></TitleComponent>
+        <TitleComponent :title="'Unsere bisherigen Erfolge'" :slogan="'Dank unserer großzügigen Unterstützer'"></TitleComponent>
       </div>
       <div class="content">
         <div class="list">

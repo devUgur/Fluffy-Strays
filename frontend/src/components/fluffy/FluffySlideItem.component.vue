@@ -58,6 +58,7 @@ export default {
   place-items: center;
   justify-content: center;
   height: calc(100% - 8px);
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 .list-item .image{
   transition: transform 0.5s ease-in-out;

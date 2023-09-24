@@ -104,16 +104,16 @@ export default {
 }
 
 .img-layout{
-  margin-top: -145px;
+  margin-top: -150px;
   width: 200px;
   height: 200px;
   background-color: #b7b7b7;
   /*border: 5px solid grey;*/
   border-radius: 50%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   display: flex;
   place-items: center;
   justify-content: center;
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 .footer-section{
   border-bottom: 1px solid rgba(255, 255, 255, 0.51);

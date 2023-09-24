@@ -91,6 +91,7 @@ export default {
   justify-content: center;
   background-color: var(--color-palette-1-D);
   padding: 50px 0;
+  border-bottom: 5px solid white;
 }
 
 #slide{

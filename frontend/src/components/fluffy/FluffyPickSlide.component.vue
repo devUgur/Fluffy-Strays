@@ -1,6 +1,6 @@
 <template>
   <div id="fluffy-pick-slide">
-    <TitleComponent :title="'unsere Fluffys'" :slogan="'Hilf uns zu helfen'"></TitleComponent>
+    <TitleComponent :title="'Unsere Fluffys'" :slogan="'Hilf uns zu helfen'"></TitleComponent>
     <FluffySlidesComponent></FluffySlidesComponent>
   </div>
 </template>
