@@ -98,11 +98,13 @@ p.reference{
   display: flex;
   place-items: center;
   justify-content: center;
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 
 .image img{
   width: 100%;
   object-fit: cover;
+
 }
 
 .text button {
@@ -114,6 +116,7 @@ p.reference{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 
 img.default{
