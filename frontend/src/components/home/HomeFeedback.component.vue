@@ -7,16 +7,27 @@
       </div>
       <div class="slides">
         <Flicking class="content" :options="flickingOptions" :plugins="plugins">
-          <div class="card-panel" v-for="(slide, index) in slides" :key="index">
+          <div class="card-panel"
+               v-for="(slide, index) in slides"
+               :key="index"
+               @mouseenter="slide.hovered = true"
+               @mouseleave="slide.hovered = false"
+          >
            <div class="slide">
              <div class="item profile">
               <img src="@/assets/flaticons/default_user.png" alt="">
              </div>
              <div class="item comment">
-               <p>{{slide.text}}</p>
+               <p>{{slide.text}} - <router-link to="">weiterlesen</router-link></p>
              </div>
              <div class="item to">
-               <router-link to="">Sei auch du dabei!</router-link>
+               <transition name="slide-fade">
+                 <div class="blog-route" v-show="slide.hovered">
+                   <router-link :to="'/'" target="_blank">
+                     <router-link to="">Sei auch du dabei!</router-link>
+                   </router-link>
+                 </div>
+               </transition>
              </div>
            </div>
           </div>
@@ -35,7 +46,7 @@
       </div>
       <div class="title">
         <h2>Dank eurer finanziellen Unterstützung
-          können wir so viel Bewegen</h2>
+          können wir so viel bewegen</h2>
       </div>
     </div>
   </div>
@@ -76,26 +87,32 @@ export default {
         {
           name: "Ugur Özdamar",
           text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim esse fugit, ipsa iusto laboriosam molestiae nihil omnis qui sapiente tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
         {
           name: "",
           text: "Accusamus adipisci cum deleniti deserunt, doloremque, enim esse fugit, ipsa iusto laboriosam molestiae nihil omnis qui sapiente tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
         {
           name: "",
           text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
         {
           name: "",
           text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci cum deleniti deserunt, doloremque, enim esse fugit, ipsa iusto laboriosam molestiae nihil omnis qui sapiente tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
         {
           name: "",
           text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci cum deleniti deserunt, doloremque, enim esse fugit, ipsa iusto laboriosam molestiae nihil omnis qui sapiente tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
         {
           name: "",
           text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci cum deleniti deserunt, doloremque, enim esse fugit, ipsa iusto laboriosam molestiae nihil omnis qui sapiente tempora tenetur veritatis! Asperiores cum, cumque dolore ea eveniet ex excepturi possimus provident repellat repellendus!",
+          hovered: false,
         },
       ]
     }
@@ -141,7 +158,7 @@ export default {
 }
 
 .card-panel:hover{
-  box-shadow: none;
+  /*box-shadow: none;*/
 }
 
 .slide{
@@ -171,8 +188,31 @@ export default {
   bottom: 0;
 }
 
-.item.to a{
+a{
   color: var(--color-palette-1-D);
+}
+
+.item.to{
+  height: 20px;
+}
+
+.slide-fade-enter-active {
+  /*transition: all 0.3s ease-out;*/
+  /*transition: all 0.3s ease-out;*/
+}
+
+.slide-fade-leave-active {
+  /*ransition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);*/
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.blog-route{
+  transition: all 0.3s ease-out;
 }
 </style>
 
