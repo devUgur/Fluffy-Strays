@@ -7,7 +7,7 @@ const state = {
         { name: "Fluffys", to: "/fluffys"},
         { name: "Blog", to: "/blogs"},
         { name: "Unsere Helden", to: "/supporters"},
-        { name: "Neue Projekte", to: "/projects"},
+        { name: "Neue Projekte", to: "/projects", tooltip: "coming soon..."},
     ],
 }
 

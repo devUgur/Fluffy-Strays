@@ -3,8 +3,9 @@
     <div class="navs">
       <nav v-show="!collapsed">
         <div class="link" v-for="(link, index) in links" :key="link.to">
-          <router-link :to="link.to">
+          <router-link :title="link.tooltip || ''" :to="link.to">
             <div>{{link.name}}</div>
+            <img src="@/assets/flaticons/pet-color-1-A.png" alt="">
             <img src="@/assets/flaticons/pet-color-1-A.png" alt="">
           </router-link>
         </div>
@@ -39,12 +40,13 @@ nav {
 }
 
 nav a {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-palette-1-D);
   text-decoration: none;
   display: flex;
   place-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 nav a :hover{
