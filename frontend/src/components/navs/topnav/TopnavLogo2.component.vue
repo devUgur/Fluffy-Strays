@@ -19,7 +19,9 @@ export default {
 
 <style scoped>
 #topnav-logo-component{
-
+  max-width: 400px;
+  height: 100px;
+  width: 300px;
 }
 
 .logo{
@@ -46,6 +48,7 @@ h1{
 
 .logo img{
   height: 82px;
+  width: 82px;
 }
 
 .collapsed-items{

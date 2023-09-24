@@ -218,7 +218,7 @@ a:hover {
 
 .social-links{
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 .social-link-item{
   margin-right: 15px;

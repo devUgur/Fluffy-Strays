@@ -35,12 +35,16 @@ export default {
 #topnav-social-media-component{
   display: flex;
   justify-content: right;
+  max-width: 300px;
+  min-width: 300px;
+  width: 100%;
+  height: 40px;
 }
 
 .layout{
   display: flex;
   place-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 @media (max-width: 1200px) {
