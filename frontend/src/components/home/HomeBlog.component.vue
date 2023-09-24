@@ -1,7 +1,7 @@
 <template>
   <div id="fluffy-strays-blog-component">
     <div class="container">
-      <TitleComponent :title="'der Fluffy Strays Blog'" :slogan="'neues aus dem Leben der flauschigen Streuner'"></TitleComponent>
+      <TitleComponent :title="'der Fluffy Strays Blog'" :slogan="'Neues aus dem Leben der flauschigen Streuner'"></TitleComponent>
       <BlogListComponent></BlogListComponent>
     </div>
   </div>
@@ -34,7 +34,6 @@ export default {
   font-weight: bold;
   margin: 0 auto;
   max-width: 300px;
-  font-size: 20px;
   font-family: Indie, sans-serif;
 }
 </style>

@@ -38,21 +38,12 @@
       </div>
     </div>
     <div class="footer-section social-links">
-      <div class="social-link-item" @click="openYoutube">
-        <img src="@/assets/flaticons/social/youtube-white.png" alt="">
-      </div>
-      <div class="social-link-item" @click="openInstagram">
-        <img src="@/assets/flaticons/social/instagram-white.png" alt="">
-      </div>
-      <div class="social-link-item">
-        <img src="@/assets/flaticons/social/pinterest-white.png" alt="">
-      </div>
-      <div class="social-link-item">
-        <img src="@/assets/flaticons/social/facebook-white.png" alt="">
-      </div>
-      <div class="social-link-item" @click="openTiktok">
-        <img src="@/assets/flaticons/social/tiktok-white.png" alt="">
-      </div>
+      <SocialMediaIconComponent
+          v-for="icon in socialIcons"
+          :icon="icon"
+          :active-icon="icon.color"
+          :passive-icon="icon.white"
+      ></SocialMediaIconComponent>
     </div>
     <div class="footer-section legal-links">
       <div class="legal-link-item">
@@ -69,8 +60,17 @@
 </template>
 
 <script>
+import SocialMediaIconComponent from "@/components/icons/SocialMediaIcon.component.vue";
 export default {
   name: "FooterComponent",
+  components: {
+    SocialMediaIconComponent
+  },
+  computed: {
+    socialIcons(){
+      return this.$store.getters['socialmedia/socialIcons'];
+    }
+  },
   methods: {
     openYoutube(){
       this.$store.dispatch('socialmedia/openYoutube');
@@ -218,6 +218,7 @@ a:hover {
 
 .social-links{
   display: flex;
+  gap: 10px;
 }
 .social-link-item{
   margin-right: 15px;

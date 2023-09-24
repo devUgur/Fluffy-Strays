@@ -65,10 +65,11 @@ button{
     white-space: nowrap;
     justify-content: center;
     transition: box-shadow 0.5s;
+    box-shadow: var(--box-shadow-palette-1-A);
 }
 
 #topnav-donation-component button:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 #topnav-donation-component button img{
@@ -78,6 +79,7 @@ button{
 
 p.slogan{
     font-family: Indie, sans-serif;
+    font-size: 22px !important;
 }
 
 

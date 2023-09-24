@@ -44,11 +44,12 @@ export default {
   overflow: hidden;
   background-color: #e1e1e1;
   transition: box-shadow 0.5s;
-  border: 3px solid rgb(220,220,220);
+  /*border: 3px solid rgb(220,220,220);*/
   max-width: calc(400px);
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 .card:hover{
-  box-shadow: rgba(100, 100, 111, 0.5) 0 7px 29px 0;
+  /*box-shadow: rgba(100, 100, 111, 0.5) 0 7px 29px 0;*/
 }
 .image{
   height: 200px;

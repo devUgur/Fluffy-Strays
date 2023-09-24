@@ -35,9 +35,9 @@ export default {
       currentLanguage: 'de', // Standardmäßig Deutsch
       currentIndex: 0,
       multiLangWelcomeText: [
-        'Es ist eine Freude, dich hier zu haben.',
-        'Seni burada gördüğümüze sevindik.',
-        "It's a pleasure to have you here.",
+        'Wir freuen uns, das du hier bist!',
+        'Seni burada gördüğümüze sevindik!',
+        "It's a pleasure to have you here!",
       ],
     };
   },
