@@ -40,7 +40,7 @@ export default {
   width: 100%;
   flex-wrap: wrap;
   background-color: grey;
-
+  box-shadow: var(--box-shadow-palette-1-A);
 }
 
 .text, .image{
