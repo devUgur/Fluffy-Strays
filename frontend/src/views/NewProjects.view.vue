@@ -1,6 +1,6 @@
 <template>
-  <div id="blog-view">
-    <TitleComponent :title="'Fluffy Strays Blog'" :slogan="'Coming soon...'"></TitleComponent>
+  <div id="new-projects-view">
+    <TitleComponent :title="'Neue Projekte'" :slogan="'Coming soon...'"></TitleComponent>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 <script>
 import TitleComponent from "@/components/title/title.component.vue";
 export default {
-  name: "BlogView",
+  name: "NewProjectsView",
   components: {
     TitleComponent,
   }
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-#blog-view{
+#new-projects-view{
   display: flex;
   flex-direction: column;
   place-items: center;

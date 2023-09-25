@@ -4,7 +4,7 @@ const state = {
     windowScrollY: 0,
     links: [
         { name: "Home", to: "/"},
-        { name: "Fluffys", to: "/fluffys"},
+        //{ name: "Fluffys", to: "/fluffys"},
         { name: "Blog", to: "/blogs"},
         { name: "Unsere Helden", to: "/supporters"},
         { name: "Neue Projekte", to: "/projects", tooltip: "coming soon..."},

@@ -10,6 +10,8 @@
     </div>
     <FooterComponent></FooterComponent>
     <ScrollToTopButtonComponent></ScrollToTopButtonComponent>
+    <CookiesComponent></CookiesComponent>
+    <DonationPopupComponent></DonationPopupComponent>
   </div>
 </template>
 
@@ -18,46 +20,24 @@
 import TopnavComponent from "@/components/navs/Topnav.component.vue";
 import FooterComponent from "@/components/footer/Footer2.component.vue";
 import ScrollToTopButtonComponent from "@/components/buttons/ScrollToTopButton.component.vue";
+import CookiesComponent from "@/components/cookies/Cookies.component.vue";
+import DonationPopupComponent from "@/components/donation/DonationPopup.component.vue";
 export default {
   name: "MainLayout",
   components: {
     TopnavComponent,
     FooterComponent,
-    ScrollToTopButtonComponent
+    ScrollToTopButtonComponent,
+    CookiesComponent,
+    DonationPopupComponent
   }
 }
 </script>
 
-<style>
-.scale-slide-enter-active,
-.scale-slide-leave-active {
-  position: absolute;
-  transition: all 0.85s ease;
-}
-
-.scale-slide-enter-from {
-  left: -100%;
-}
-
-.scale-slide-enter-to {
-  left: 0%;
-}
-
-.scale-slide-leave-from {
-  transform: scale(1);
-}
-
-.scale-slide-leave-to {
-  transform: scale(0.8);
-}
-
-body{
-  overflow-x: hidden;
-}
-</style>
 <style scoped>
 #view{
   width: 100%;
   overflow: hidden;
+  min-height: calc(100vh - 200px);
 }
 </style>

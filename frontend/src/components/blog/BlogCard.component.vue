@@ -106,10 +106,6 @@ p.title{
 .blog-route a:hover{
   text-decoration: underline;
 }
-
-
-
-
 .blog-route a img{
   height: 16px;
   margin-left: 5px;

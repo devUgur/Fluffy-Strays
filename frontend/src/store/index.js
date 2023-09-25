@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 
+import AppStore from "@/store/modules/app.store";
 import TopnavStore from "@/store/modules/topnav.store";
 import SocialmediaStore from "@/store/modules/socialmedia.store";
 import BlogStore from "@/store/modules/blog.store";
@@ -16,6 +17,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    app: AppStore,
     blog: BlogStore,
     language: LanguageStore,
     menu: MenuStore,

@@ -38,48 +38,6 @@ export default {
     };
   },
   methods: {
-    async animate() {
-      await this.$nextTick(() => {});
-      const el = document.querySelectorAll('#about-text-component p');
-
-      // Initialize SplitType for the text element
-      const split = await SplitType.create(el);
-      if (split.chars.length === 0) {
-        console.log("Split chars length === 0");
-        return;
-      }
-
-      // Create a timeline for the letter animation
-      const tl = gsap.timeline();
-
-      // Delay between letter animations
-      const letterDelay = 0.02; // Decreased letter delay for smoother animation
-
-      // Loop through each letter and apply bounce animation
-      split.chars.forEach((char, index) => {
-        tl.fromTo(
-            char, // Target element
-            {
-              y: 0,
-            },
-            {
-              y: -10, // Bounce up by 10 pixels
-              ease: 'power3.out', // Adjust the ease for a smoother bounce
-            },
-            index * letterDelay // Apply a staggered delay
-        );
-
-        // Add a bounce back animation with a slight delay
-        tl.to(
-            char,
-            {
-              y: 0, // Return to the original position
-              ease: 'elastic.out(1, 0.3)', // Adjust the ease to create a bounce effect
-            },
-            ">-0.01" // Start this animation slightly before the previous one finishes
-        );
-      });
-    },
     handleIntersection(entries) {
       entries.forEach((entry) => {
         // Überprüfe, ob der Container im Viewport ist.
@@ -89,22 +47,11 @@ export default {
 
           // Finde alle markierten Elemente im Container.
           const markElements = container.querySelectorAll(".mark");
-          //this.animate();
-          // Durchlaufe die markierten Elemente und triggere die Animationen.
-          markElements.forEach((element, index) => {
-            // Hier setzen Sie eine Verzögerung (in Millisekunden) für die Animation.
-            // Die Verzögerung basiert auf dem Index des Elements.
-            const delay = index * 1500; // 500 Millisekunden (0,5 Sekunden) Verzögerung pro Element.
 
-            setTimeout(() => {
-              //this.animateElement(element);
-            }, delay);
-          });
+        }else{
+          const container = this.$refs.container;
         }
       });
-    },
-    animateElement(element) {
-      element.style.width = "100%"; // Beispielanimation
     },
   },
   mounted() {
@@ -131,15 +78,17 @@ p{
 }
 
 .mark {
-  position: relative;
+  font-weight: bold;
+  color:  var(--color-palette-1-D);
+}
+.mark.active{
   color: var(--color-palette-1-D);
-  white-space: pre;
+  font-size: 24px;
 }
 
 span{
   padding: 0;
   margin: 0;
-  white-space: nowrap;
 }
 
 .text{
