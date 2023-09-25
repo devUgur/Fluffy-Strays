@@ -17,7 +17,7 @@
           <div class="blog-route" v-show="onHover">
             <router-link :to="'/blogs/'+blog._id" target="_blank">
               <div>weiterlesen</div>
-              <img src="@/assets/flaticons/next-color-1-A.png">
+              <img src="@/assets/flaticons/next-color-1-A.png" alt="">
             </router-link>
           </div>
         </transition>

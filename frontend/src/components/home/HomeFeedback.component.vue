@@ -18,13 +18,14 @@
               <img src="@/assets/flaticons/default_user.png" alt="">
              </div>
              <div class="item comment">
-               <p>{{slide.text}} - <router-link to="">weiterlesen</router-link></p>
+               <p>{{slide.text}}</p>
              </div>
              <div class="item to">
                <transition name="slide-fade">
                  <div class="blog-route" v-show="slide.hovered">
-                   <router-link :to="'/'" target="_blank">
-                     <router-link to="">Sei auch du dabei!</router-link>
+                   <router-link to="">
+                     <div>weiterlesen</div>
+                     <img src="@/assets/flaticons/next-color-1-A.png" alt="">
                    </router-link>
                  </div>
                </transition>
@@ -189,7 +190,20 @@ export default {
 }
 
 a{
+  display: flex;
+  place-items: center;
+  text-decoration: none;
   color: var(--color-palette-1-D);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a img{
+  height: 16px;
+  margin-left: 5px;
+  transition: all 0.5s;
 }
 
 .item.to{
@@ -214,6 +228,13 @@ a{
 .blog-route{
   transition: all 0.3s ease-out;
 }
+
+.blog-route a {
+  height: 16px;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+
 </style>
 
 <style>
