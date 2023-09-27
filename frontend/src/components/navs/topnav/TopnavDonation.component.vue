@@ -1,6 +1,6 @@
 <template>
   <div id="topnav-donation-component">
-    <div class="donation">
+    <div class="donation" v-if="show">
       <DonationButtonComponent></DonationButtonComponent>
       <GodfatherButtonComponent></GodfatherButtonComponent>
     </div>
@@ -16,7 +16,25 @@ export default {
   components: {
     DonationButtonComponent,
     GodfatherButtonComponent
-  }
+  },
+  data(){
+    return{
+      show: true,
+    }
+  },
+  methods: {
+    handleRoute(){
+      this.show = this.$route.name !== 'OneFluffy';
+    }
+  },
+  mounted() {
+    this.handleRoute();
+  },
+  watch:{
+    '$route' (to, from){
+      this.handleRoute();
+    }
+  },
 }
 </script>
 

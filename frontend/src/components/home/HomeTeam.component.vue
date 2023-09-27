@@ -1,7 +1,7 @@
 <template>
   <div id="home-team-component">
     <div class="container">
-      <TitleComponent :title="'das Fluffy Strays Team'" slogan="Dank euch können wir helfen"></TitleComponent>
+      <TitleComponent :title="'Fluffy Strays Team'" slogan="Dank euch können wir helfen"></TitleComponent>
       <div class="content team">
         <div class="text">
           <h2 class="title">Das Team stellt sich vor</h2>

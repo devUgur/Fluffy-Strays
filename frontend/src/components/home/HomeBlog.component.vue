@@ -1,7 +1,7 @@
 <template>
   <div id="fluffy-strays-blog-component">
     <div class="container">
-      <TitleComponent :title="'der Fluffy Strays Blog'" :slogan="'Neues aus dem Leben der flauschigen Streuner'"></TitleComponent>
+      <TitleComponent :title="'Fluffy Strays Blog'" :slogan="'Neues aus dem Leben der flauschigen Streuner'"></TitleComponent>
       <BlogListComponent></BlogListComponent>
     </div>
   </div>

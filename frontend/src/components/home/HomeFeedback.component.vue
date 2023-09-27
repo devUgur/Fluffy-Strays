@@ -2,7 +2,7 @@
   <div id="home-feedback-component">
     <div class="container">
       <div class="title">
-        <TitleComponent :title="'Es ist mir eine Ehre <br> unsere Helden zu präsentieren'"></TitleComponent>
+        <TitleComponent :title="'Es ist uns eine Ehre <br> unsere Helden zu präsentieren'"></TitleComponent>
         <!--<h1>Das sagen unsere Unterstützer</h1>-->
       </div>
       <div class="slides">
@@ -221,7 +221,7 @@ a img{
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(20px);
+  transform: translateY(20px);
   opacity: 0;
 }
 
