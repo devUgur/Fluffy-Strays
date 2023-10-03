@@ -23,12 +23,37 @@ button{
     cursor: pointer;
     border-radius: 5px;
 }
+
+button{
+    border: none;
+    cursor: pointer;
+    font-family: Poppins;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background-color: var(--color-palette-1-D);
+    color: white;
+}
+
+
+input, textarea, select, option, li, ul{
+    font-family: Poppins;
+    padding: 10px 15px;
+    border-radius: 15px !important;
+    border: none;
+    font-size: 14px !important;
+}
+
+input:focus, textarea:focus{
+    outline: 2px solid var(--color-palette-1-D) !important;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
+
 /* HOME */
 .home-banner{
     min-height: 250px;

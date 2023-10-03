@@ -12,3 +12,8 @@
     font-family: 'Titan';
     src: url('@/assets/fonts/Titan/TitanOne-Regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('@/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}

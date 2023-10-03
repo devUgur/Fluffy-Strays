@@ -9,6 +9,9 @@
   "dependencies": {
     "@egjs/flicking-plugins": "^4.7.1",
     "@egjs/vue3-flicking": "^4.11.0",
+    "@vueform/multiselect": "^2.6.2",
+    "@vuepic/vue-datepicker": "^7.0.0",
+    "axios": "^1.5.1",
     "gsap": "^3.12.2",
     "scroll-smooth": "^1.1.1",
     "smooth-scroll": "^16.1.3",

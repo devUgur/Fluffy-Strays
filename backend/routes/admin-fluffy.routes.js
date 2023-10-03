@@ -55,8 +55,38 @@ router.post('/', upload.array('images'), async (req, res) => {
         res.status(201).json({ message: 'Fluffy wurde erfolgreich erstellt.' });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Ein Fehler ist aufgetreten.' });
+        res.status(500).json({ message: 'Ein Fehler beim speichern ist aufgetreten.' });
     }
 });
+
+router.delete('/:id', async (req, res) => {
+    try{
+        const fluffyId = req.params.id;
+
+        // Überprüfe, ob ein Fluffy mit der angegebenen ID existiert
+        const fluffy = await Fluffy.findById(fluffyId);
+
+        // Wenn kein Fluffy mit der angegebenen ID gefunden wurde, gib einen Fehler zurück
+        if (!fluffy) {
+            return res.status(404).json({ message: 'Fluffy wurde nicht gefunden.' });
+        }
+
+        // Lösche die Bilder des Fluffy aus dem Dateisystem (optional, falls Bilder gespeichert sind)
+        const imageNames = fluffy.images;
+        for (const imageName of imageNames) {
+            const imagePath = path.join(__dirname, `../public/fluffyimages/${imageName}`);
+            fs.unlinkSync(imagePath);
+        }
+
+        // Lösche den Fluffy-Datensatz aus der Datenbank
+        await fluffy.remove();
+
+        res.status(204).json(); // Erfolgreich gelöscht, kein Inhalt zur Antwort
+    } catch (e) {
+        console.error(e);
+        res.status(500).json({ message: 'Ein Fehler beim Löschen ist aufgetreten.' });
+    }
+});
+
 
 module.exports = router;

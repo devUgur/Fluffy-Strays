@@ -7,7 +7,7 @@
 
 <script>
 import TitleComponent from "@/components/title/title.component.vue";
-import OneBlogView from "@/views/OneBlog.view.vue";
+import OneBlogView from "@/views/user/OneBlog.view.vue";
 export default {
   name: "OneBlogListComponent",
   components: {
