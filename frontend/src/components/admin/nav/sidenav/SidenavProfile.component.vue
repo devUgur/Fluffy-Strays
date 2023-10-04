@@ -14,10 +14,10 @@
     <div class="body">
       <div class="profile">
         <div class="image">
-          <router-link :to="'/admin/user/'+profileLink"></router-link>
+          <router-link :to="'/admin/user/'+currentUser._id"></router-link>
           <img :src="imageSrc" alt="">
         </div>
-        <router-link class="name" :to="'/admin/user/'+profileLink"> {{currentUserName}} </router-link>
+        <router-link class="name" :to="'/admin/user/'+currentUser._id"> {{currentUserName}} </router-link>
         <div class="email" v-if="currentUser">{{currentUser.email}}</div>
       </div>
     </div>
@@ -28,9 +28,6 @@
 export default {
   name: "SidenavProfileComponent",
   computed: {
-    profileLink(){
-      return this.$store.getters['admin/userId'];
-    },
     currentUser(){
       return this.$store.getters['adminUser/current'];
     },

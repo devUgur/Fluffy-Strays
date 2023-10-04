@@ -36,6 +36,9 @@ const mutations = {
     SET_USER_ID(state, id){
         state.userId = id;
     },
+    SET_PAGE_NAME(state, pageName){
+        state.pageName = pageName;
+    },
 }
 
 export default {

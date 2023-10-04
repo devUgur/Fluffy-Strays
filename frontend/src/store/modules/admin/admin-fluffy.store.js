@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const state = {
     name: "",
@@ -20,10 +21,23 @@ const getters = {
 const actions = {
     async load({dispatch, commit}){
         try {
-            let response = await dispatch('axios/get', 'admin/fluffy', {root: true});
+            let response = await dispatch('axios/get', {url:'admin/fluffy'}, {root: true});
             if(response && response.status === 200){
                 commit('SET_LIST', response.data);
             }
+        }catch (e) {
+            console.log(e);
+        }
+    },
+    async delete({dispatch}, id){
+        try{
+            let request = { url: "admin/fluffy/" +id };
+            let response = await dispatch('axios/delete', request, {root:true})
+            if(response && response.status === 200){
+                await dispatch('load');
+            }
+            console.log(response);
+            return response;
         }catch (e) {
             console.log(e);
         }

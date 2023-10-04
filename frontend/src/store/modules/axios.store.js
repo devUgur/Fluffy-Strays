@@ -28,11 +28,11 @@ const getters = {
 
 // Actions
 const actions = {
-    async get({dispatch}, reqPath){
+    async get({dispatch}, req){
         //setToken();
         try {
             let res;
-            res = await axios.get('/' + reqPath);
+            res = await axios.get('/' + req.url);
             return res;
 
         } catch (err) {

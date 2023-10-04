@@ -12,6 +12,7 @@ app.use(cors());
 // Statischen Ordner "public" hinzufügen
 app.use(express.static('public'));
 app.use('/userimages', express.static('public/userimages'));
+//app.use('/fluffyimages', express.static('public/fluffyimages'));
 
 // parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }))
@@ -30,12 +31,14 @@ dotenv.config();
 
 
 // Import Routes
-const adminRoutes = require('./routes/admin.routes');
-const adminUserRoutes = require('./routes/admin-user.routes');
-const adminFluffyRoutes = require('./routes/admin-fluffy.routes');
-const adminDonationRoutes = require('./routes/admin-donation.routes');
-const adminSubscriptionRoutes = require('./routes/admin-subscription.routes');
-const adminBlogRoutes = require('./routes/admin-blog.routes');
+const fluffyRoutes = require('./routes/fluffy.routes');
+const donationRoutes = require('./routes/donation.routes');
+const adminRoutes = require('./routes/admin/admin.routes');
+const adminUserRoutes = require('./routes/admin/admin-user.routes');
+const adminFluffyRoutes = require('./routes/admin/admin-fluffy.routes');
+const adminDonationRoutes = require('./routes/admin/admin-donation.routes');
+const adminSubscriptionRoutes = require('./routes/admin/admin-subscription.routes');
+const adminBlogRoutes = require('./routes/admin/admin-blog.routes');
 
 
 
@@ -73,6 +76,8 @@ app.get('/*', (req, res, next) => {
 })
 
 // Using app routes
+app.use("/api/fluffy", fluffyRoutes);
+app.use("/api/donation", donationRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/admin/user", adminUserRoutes);
 app.use("/api/admin/fluffy", adminFluffyRoutes);
@@ -83,5 +88,5 @@ app.use("/api/admin/blog", adminBlogRoutes);
 
 
 server.listen(3000, () => {
-    console.log('listening on *:5000');
+    console.log('listening on *:3000');
 });

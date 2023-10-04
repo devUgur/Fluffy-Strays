@@ -2,7 +2,10 @@
   <div id="topnav-component">
     <div id="topnav-layout">
       <TopnavPageNameComponent></TopnavPageNameComponent>
-      <SignOutButtonComponent></SignOutButtonComponent>
+      <div style="display: flex; place-items: center; gap: 10px">
+        <router-link to="/" target="_blank">Zur Webseite</router-link>
+        <SignOutButtonComponent></SignOutButtonComponent>
+      </div>
     </div>
   </div>
 </template>

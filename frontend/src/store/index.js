@@ -10,6 +10,7 @@ import SocialmediaStore from "@/store/modules/socialmedia.store";
 import BlogStore from "@/store/modules/blog.store";
 import LanguageStore from "@/store/modules/language.store";
 import MenuStore from "@/store/modules/menu.store";
+import FluffyStore from "@/store/modules/fluffy.store";
 
 // Admin store imports
 import AdminStore from "@/store/modules/admin/admin.store";
@@ -39,6 +40,7 @@ export default createStore({
     menu: MenuStore,
     topnav: TopnavStore,
     socialmedia: SocialmediaStore,
+    fluffy: FluffyStore,
 
     //admin
     admin: AdminStore,

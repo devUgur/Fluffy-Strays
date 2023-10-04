@@ -9,15 +9,19 @@
           <th>Geschlecht</th>
           <th>Aufgenommen am</th>
           <th>Bilder</th>
+          <th class="options">Optionen</th>
         </tr>
-        <tr v-for="fluffy in fluffyList">
+        <tr v-for="fluffy in fluffyList" @click="selectFluffy(fluffy)" :class="{'selected': fluffy.selected}">
           <td>{{fluffy.name}}</td>
           <td>{{fluffy.gender}}</td>
           <td>{{generateDateString(fluffy.receivedAt)}}</td>
           <td>
-            <select>
-              <option v-for="image in fluffy.images">{{image}}</option>
-            </select>
+            {{fluffy.images.length}}
+          </td>
+          <td class="options">
+            <button @click="removeFluffy(fluffy._id)">
+              <img src="@/assets/flaticons/bin.png">
+            </button>
           </td>
         </tr>
       </table>
@@ -26,15 +30,19 @@
 </template>
 
 <script>
-import FluffyListItemComponent from "@/components/admin/fluffy/list/FluffyListItem.component.vue";
 export default {
   name: "FluffyListComponent",
   components: {
-    FluffyListItemComponent
+
   },
   computed: {
     fluffyList(){
       return this.$store.getters['adminFluffy/list'];
+    }
+  },
+  data(){
+    return {
+      selectedFluffy: null,
     }
   },
   methods: {
@@ -44,6 +52,15 @@ export default {
     generateDateString(dateString){
       let dateObject = new Date(dateString);
       return dateObject.toLocaleDateString();
+    },
+    async removeFluffy(id){
+      await this.$store.dispatch('adminFluffy/delete', id);
+    },
+    selectFluffy(fluffy){
+      this.fluffyList.forEach(fluffy => fluffy.selected = null);
+      fluffy.selected = true;
+      this.selectedFluffy = fluffy;
+      this.$store.commit('adminFluffyCreate/SET_NEW_FLUFFY', fluffy);
     }
   },
   mounted() {
@@ -84,11 +101,34 @@ th {
   padding: 15px 20px;
 }
 
+th.options{
+  display: flex;
+  justify-content: center;
+}
+
+tr.selected{
+  background: var(--color-palette-1-D) !important;
+  color: white !important;
+}
+
 tr:nth-child(even){background-color: #f2f2f2;}
 /* Nur Zeilen ab dem zweiten tr-Element haben den Hover-Effekt */
 tr:not(:first-child):hover {
-  background-color: var(--color-palette-1-D);
-  color: white;
+  color: var(--color-palette-1-D);
+}
+
+.options img{
+  height: 22px;
+}
+.options button{
+  background-color: white;
+  display: flex;
+}
+
+td.options {
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
 </style>

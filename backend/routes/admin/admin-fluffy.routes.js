@@ -4,7 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs'); // Vergiss nicht, fs zu importieren
 const { v4: uuidv4 } = require('uuid');
-const Fluffy = require('../db/schemas/Fluffy.schema');
+const Fluffy = require('../../db/schemas/Fluffy.schema');
 
 router.get('/', async (req, res) => {
     try {
@@ -60,33 +60,24 @@ router.post('/', upload.array('images'), async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    try{
+    try {
         const fluffyId = req.params.id;
 
-        // Überprüfe, ob ein Fluffy mit der angegebenen ID existiert
-        const fluffy = await Fluffy.findById(fluffyId);
+        // Versuchen Sie, das Fluffy-Dokument anhand der ID zu löschen
+        const result = await Fluffy.deleteOne({ _id: fluffyId });
 
-        // Wenn kein Fluffy mit der angegebenen ID gefunden wurde, gib einen Fehler zurück
-        if (!fluffy) {
+        // Überprüfen Sie, ob das Dokument erfolgreich gelöscht wurde
+        if (result.deletedCount === 0) {
             return res.status(404).json({ message: 'Fluffy wurde nicht gefunden.' });
         }
 
-        // Lösche die Bilder des Fluffy aus dem Dateisystem (optional, falls Bilder gespeichert sind)
-        const imageNames = fluffy.images;
-        for (const imageName of imageNames) {
-            const imagePath = path.join(__dirname, `../public/fluffyimages/${imageName}`);
-            fs.unlinkSync(imagePath);
-        }
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn das Dokument erfolgreich gelöscht wurde
 
-        // Lösche den Fluffy-Datensatz aus der Datenbank
-        await fluffy.remove();
-
-        res.status(204).json(); // Erfolgreich gelöscht, kein Inhalt zur Antwort
+        res.status(200).json(result); // Erfolgreich gelöscht, kein Inhalt zur Antwort
     } catch (e) {
         console.error(e);
         res.status(500).json({ message: 'Ein Fehler beim Löschen ist aufgetreten.' });
     }
 });
-
 
 module.exports = router;

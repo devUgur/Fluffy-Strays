@@ -93,6 +93,9 @@ const actions = {
 }
 // Mutations
 const mutations = {
+    SET_NEW_FLUFFY(state, newFluffy){
+        state.newFluffy = newFluffy;
+    },
     SET_NEW_FLUFFY_NAME(state, name){
         state.newFluffy.name = name;
     },

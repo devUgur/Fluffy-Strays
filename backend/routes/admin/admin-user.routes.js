@@ -1,5 +1,5 @@
-const User = require("../db/schemas/User.schema");
-const UserImage = require("../db/schemas/UserImage.schema");
+const User = require("../../db/schemas/User.schema");
+const UserImage = require("../../db/schemas/UserImage.schema");
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");

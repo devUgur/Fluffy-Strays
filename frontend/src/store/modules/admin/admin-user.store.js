@@ -47,7 +47,7 @@ const actions = {
     },
     async getAll({commit, dispatch}){
         try {
-            let response = await dispatch('axios/get', 'admin/user' , {root: true});
+            let response = await dispatch('axios/get', {url: 'admin/user'} , {root: true});
 
             if(response && response.status === 200){
                 commit('SET_LIST', response.data);
@@ -58,7 +58,7 @@ const actions = {
     },
     async getById({commit, dispatch}, id){
         try {
-            return await dispatch('axios/get', 'admin/user/' + id, {root: true});
+            return await dispatch('axios/get', {url:'admin/user/' + id }, {root: true});
         }catch (e) {
             console.log(e);
         }
@@ -81,9 +81,9 @@ const actions = {
         let response = await dispatch('axios/post', requestPayload, {root: true})
         console.log(response)
     },
-    async updateImage({commit, dispatch, rootState}, data){
+    async updateImage({commit, dispatch, state}, data){
         try{
-            let currentUserId =  rootState.admin.userId
+            let currentUserId =  state.current._id
 
             let requestPayload = {
                 url: "admin/user/upload-image",
@@ -167,15 +167,6 @@ const actions = {
     async signout({commit}){
         commit('LOGOUT');
         location.reload();
-    },
-    async findByEmail({commit, dispatch}, userEmail){
-        try{
-            let requestUrl ='admin/user/find-by-email/' + userEmail;
-            return await dispatch('axios/get', requestUrl, {root: true});
-        }catch (e){
-            console.log(e);
-            return e;
-        }
     },
 }
 // Mutations

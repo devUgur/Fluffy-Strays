@@ -1,12 +1,13 @@
 <template>
   <div id="fluffy-slide-item-component">
     <div class="list-item"
-         :key="fluffy.imgName"
+         v-if="fluffy"
+         :key="fluffy._id"
          @click="toFluffy(fluffy._id)"
     >
      <div class="content">
        <div class="image">
-         <img :src="require(`@/assets/canva/animals/${fluffy.imgName}`)" alt="Fluffy Image">
+         <img :src="getFluffyImageSrc()" alt="Fluffy Image">
          <div class="blur" :class="{'active': entered}"></div>
        </div>
        <div class="name">{{fluffy.name}}</div>
@@ -27,6 +28,18 @@ export default {
     toFluffy(id){
       const url = '/fluffys/' + id;
       window.open(url, '_blank');
+    },
+    getFluffyImageSrc(){
+      console.log(this.fluffy.images)
+      if(this.fluffy && this.fluffy.images){
+        if(this.fluffy.images.length !== 0){
+          return "http://localhost:3000/fluffyimages/" + this.fluffy.images[0];
+        }
+      }
+      if(this.fluffy && this.fluffy.imgName){
+        return require(`@/assets/canva/animals/${this.fluffy.imgName}`);
+      }
+      return require(`@/assets/canva/animals/cat01.png`);
     }
   }
 }
@@ -37,8 +50,8 @@ export default {
 .list-item{
   width: 200px;
   display: flex;
-  justify-content: space-between;
   place-items: center;
+  justify-content: center;
   cursor: pointer;
   height: 230px;
 }

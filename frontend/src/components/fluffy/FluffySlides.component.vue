@@ -1,14 +1,14 @@
 <template>
-  <div id="fluffy-slides-component">
-    <div class="fluffy-list" ref="fluffy-list">
-      <div class="arrow prev" @click="prev">
+  <div id="fluffy-slides-component" ref="fluffy-list">
+    <div class="fluffy-list" v-if="fluffys && fluffys.length > 0">
+      <div class="arrow prev" @click="prev" v-if="hasMaxSize">
         <img src="@/assets/flaticons/right-arrow-thin-white.png">
       </div>
       <Flicking
           id="slide"
           ref="flicking"
           :options="flickingOptions"
-          :plugins="plugins"
+          :plugins="flickingPlungins"
       >
         <FluffySlideItemComponent
             class="card-panel"
@@ -19,7 +19,7 @@
             @mouseleave="mouseIsEnter = false"
         ></FluffySlideItemComponent>
       </Flicking>
-      <div class="arrow next" @click="next">
+      <div class="arrow next" @click="next"  v-if="hasMaxSize">
         <img src="@/assets/flaticons/right-arrow-thin-white.png">
       </div>
     </div>
@@ -41,23 +41,42 @@ export default {
     Flicking,
     FluffySlideItemComponent,
   },
+  computed: {
+    fluffys(){
+      let storedFluffys = this.$store.getters['fluffy/list'];
+      if(storedFluffys && storedFluffys.length > 0){
+        return this.$store.getters['fluffy/list'];
+      }
+      return Fluffys;
+    },
+    hasMaxSize(){
+      return this.fluffys.length > 10
+    },
+    flickingPlungins(){
+      if(this.hasMaxSize) {
+        return [new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: true})];
+      }
+      return [];
+    }
+  },
   data() {
     return {
-      fluffys: Fluffys,
+      //fluffys: Fluffys,
       mouseIsEnter: false,
       flickingOptions: {
-        circularFallback: "move",
-        circular: true,
+        //circularFallback: "move",
+        //circular: true,
         //autoResize: true,
-        align: "center",
-        autoInit: true,
+        //align: "center",
+        //autoInit: true,
         //interruptable: false,
         //duration: 500,
         deceleration: 0.0005,
+        circularFallback: "bound",
+        circular: true,
+        align: "center"
       },
-      plugins: [
-        new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: true }),
-      ],
+      plugins: [],
       listener: null,
     };
   },
@@ -70,10 +89,29 @@ export default {
     },
     slidingHandler(e){
       this.mouseIsEnter = false;
+    },
+    async loadFluffys(){
+      await this.$store.dispatch('fluffy/getList');
+    },
+    async onInit(){
+      try {
+        await this.loadFluffys();
+        this.listener = this.$refs["fluffy-list"].addEventListener('mousedown', this.slidingHandler);
+      }catch (e) {
+        console.log(e);
+      }
     }
   },
   mounted() {
-    this.listener = this.$refs["fluffy-list"].addEventListener('mousedown', this.slidingHandler);
+    this.onInit();
+  },
+  watch: {
+    flickingOptions(newVal){
+      if (newPlugins !== oldPlugins) {
+        console.log("ARDEY")
+        this.$refs.flicking.updatePlugins(newPlugins);
+      }
+    }
   }
 };
 </script>
@@ -86,16 +124,13 @@ export default {
 @import "@egjs/flicking-plugins/dist/pagination.css";
 
 .fluffy-list{
-  display: flex;
-  place-items: center;
-  justify-content: center;
   background-color: var(--color-palette-1-D);
   padding: 50px 0;
   border-bottom: 5px solid white;
+
 }
 
 #slide{
-  /*max-width: 1200px;*/
 
 }
 
